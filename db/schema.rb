@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_181513) do
+ActiveRecord::Schema.define(version: 2020_06_08_200820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2020_06_08_181513) do
   end
 
   create_table "tracks", force: :cascade do |t|
-    t.boolean "finished"
     t.integer "number_of_racers"
     t.text "description"
     t.integer "level"
@@ -60,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_06_08_181513) do
     t.float "start_longitude"
     t.float "end_latitude"
     t.float "end_longitude"
+    t.boolean "finished", default: false
   end
 
   create_table "users", force: :cascade do |t|
