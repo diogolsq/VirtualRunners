@@ -42,9 +42,9 @@ maraca = Track.create!({ name: "Corrida em volta do maraca ", description: "2 vo
 
 puts "Creating Race"
 
-race1 = Race.create!({user_id: gisela.id, track_id: volta_na_lagoa.id, km_ran: 0 , time_ran: 0})
-race2 = Race.create!({user_id: gisela.id, track_id: maraca.id, km_ran: 0 , time_ran: 0})
-race3 = Race.create!({user_id: isa.id, track_id: maraca.id, km_ran: 0 , time_ran: 0})
+race1 = Race.create!({user_id: gisela.id, track_id: volta_na_lagoa.id, km_ran: 0})
+race2 = Race.create!({user_id: gisela.id, track_id: maraca.id, km_ran: 0 })
+race3 = Race.create!({user_id: isa.id, track_id: maraca.id, km_ran: 0})
 
 
 
