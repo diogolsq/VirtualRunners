@@ -1,3 +1,16 @@
 <h1><%= @track.name %>
-<p> you can see this page in views/tracks/show</p>
 
+
+
+
+
+
+
+
+
+
+
+<h3> Runners </h3>
+<% @users.each do |user| %>
+  <%= user.name  %>
+<% end %>

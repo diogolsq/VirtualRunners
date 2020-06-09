@@ -19,7 +19,14 @@ class TracksController < ApplicationController
   end
 
   def show
+    @track.number_of_racers = Race.where(track_id: @track.id).count
+    @races = Race.where(track_id: @track.id)
+    @users = []
 
+    @races.each do |race|
+      user = User.find(race.user_id)
+      @users << user
+    end
   end
 
   def new
