@@ -1,16 +1,22 @@
-<h1><%= @track.name %>
+<h1><%= @track.name %></h1>
+
+
+<div class="user-map col-6">
+  <div id="map"
+    style="width: 100%; height: 100%;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
 
 
 
 
 
 
+<div>
+  <h3> Runners </h3>
+  <% @users.each do |user| %>
+    <%= user.name  %>
+  <% end %>
+</div>
 
-
-
-
-
-<h3> Runners </h3>
-<% @users.each do |user| %>
-  <%= user.name  %>
-<% end %>
