@@ -13,7 +13,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
- # has_one_attached :photo # Cloudinary
+ has_one_attached :photo # Cloudinary
 
  #  # we will let the geocode access our address and convert it to latitude and longitude. #mapbox
  #  geocoded_by :address
