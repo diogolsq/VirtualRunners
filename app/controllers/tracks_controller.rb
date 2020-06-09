@@ -19,10 +19,7 @@ class TracksController < ApplicationController
   end
 
   def show
-    @races = Race.where(track_id: @track)
-    @races.each do |race|
-      @track = Track.find(race.track_id)
-    end
+
   end
 
   def new
