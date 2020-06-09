@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
-require 'Date'
+require 'date'
 require 'time'
 
 puts "Cleaning database"
@@ -33,7 +33,7 @@ isa = User.create!({ name: "Isabella Meyer", username: "imeyer", password: "1234
 
 puts "Creating Tracks"
 
-volta_na_lagoa = Track.create!({ name: "Volta na Lagoa Rodrigo de Freitas", description: "Vamos dar 1 volta na lagoa", level: 2, date: Date.parse('20-06-2020'), time_to_start: Time.parse("June 20 18:00"), time_to_complete: Time.parse("June 20 20:00"), start_address:'Avenida Epitácio Pessoa 1', end_address:'Avenida Borges de Medeiro 1'})
+volta_na_lagoa = Track.create!({ name: "Volta na Lagoa Rodrigo de Freitas", description: "Vamos dar 1 volta na lagoa", level: 2, date: Date.parse('20-06-2020'), time_to_start: Time.parse("June 20 18:00"), time_to_complete: Time.parse("June 20 20:00"), start_address:'Avenida Epitácio Pessoa 1', end_address:'Avenida Borges de Medeiros 1'})
  file = open("https://media-cdn.tripadvisor.com/media/photo-s/0a/be/77/97/a-lagoa-que-fica-bem.jpg")
   volta_na_lagoa.photo.attach(io: file, filename: "lagoa.jpg")
 maraca = Track.create!({ name: "Corrida em volta do maraca ", description: "2 voltas no maraca", level: 1, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Avenida Maracanã', end_address:'Estátua do Bellini'})
