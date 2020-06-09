@@ -1,13 +1,13 @@
-require 'pry-byebug'
-
 class User < ApplicationRecord
-  validates :name, :username, :password, :level, :email, presence: true
-  validates :username, uniqueness: true
+  validates :name, presence: true
+  # validates :username, uniqueness: true
 
 
   has_many :races, dependent: :destroy
   has_many :tracks, through: :races
   has_many :messages, dependent: :destroy
+
+
 
 
   # Include default devise modules. Others available are:
@@ -23,21 +23,27 @@ class User < ApplicationRecord
  #  after_validation :geocode, if: :will_save_change_to_address?
 
   def self.find_for_strava_oauth(auth)
-    binding.pry
-    user_params = auth.slice("provider", "uid")
-    user_params.merge! auth.info.slice("email", "first_name", "last_name")
-    user_params[:token] = auth.credentials.token
-    user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
-    user_params = user_params.to_h
+    # 1) assign correct values to the keys that are missing in user info hash
+    # 2) find in the documentation of strava what is the scope that allows us to do everything, full permission, all info
+    # 3) kill the server after changing the devise rb file
+    # 4) open server and log in again, chacking what is now inside the auth variable
+    user_info = {
+      uid: auth["uid"],
+      provider: auth["provider"],
+      token: auth["credentials"]["token"],
+      name: auth["info"]["name"],
+      refresh_token: auth["credentials"]["refresh_token"] ,
+      token_expiry: auth["credentials"]["exipires_at"],
+      profile_img_url: auth["extra"]["raw_info"]["profile"]
+    }
 
-    user = User.find_by(provider: auth.provider, uid: auth.uid)
-    user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
+    user = User.find_by(provider: user_info[:provider], uid: user_info[:uid])
     if user
-      user.update(user_params)
+      user.update(user_info)
     else
-      user = User.new(user_params)
+      user = User.new(user_info)
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
-      user.save
+      user.save(validate: false)
     end
 
     return user
