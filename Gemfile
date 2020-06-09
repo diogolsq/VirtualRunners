@@ -27,6 +27,7 @@ gem 'redis', '~> 4.0'
 
 # A complete Ruby client for the Strava API v3.
 gem 'strava-ruby-client'
+gem "omniauth-strava"
 
 # Gemfile
 gem 'pundit'
