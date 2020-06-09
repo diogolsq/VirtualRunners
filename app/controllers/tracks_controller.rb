@@ -26,8 +26,30 @@ class TracksController < ApplicationController
     @races.each do |race|
       user = User.find(race.user_id)
       @users << user
+
+
+
+    @track = track.geocoded # returns flats with coordinates
+
+    @markers =[{
+        lat: @track.start_latitude,
+        lng: @track.start_longitude
+        infoWindow: render_to_string(partial: "info_window_start", locals: { track: @track }),
+        image_url: helpers.asset_url('start_line.png')
+      }]
+
+    @marker_end = {
+      lat: @track.end_latitude
+      lng: @trac.end_longitude
+      infoWindow: render_to_string(partial: "info_window_end", locals: { track: @track }),
+      image_url: helpers.asset_url('end_line.png')
+    }
+    @markers << marker_end
+
+
     end
   end
+
 
   def new
     @track = Track.new
