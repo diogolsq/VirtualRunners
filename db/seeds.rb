@@ -39,6 +39,10 @@ volta_na_lagoa = Track.create!({ name: "Volta na Lagoa Rodrigo de Freitas", desc
 maraca = Track.create!({ name: "Corrida em volta do maraca ", description: "2 voltas no maraca", level: 1, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Avenida Maracanã', end_address:'Estátua do Bellini'})
  file = open("https://upload.wikimedia.org/wikipedia/commons/b/b4/Aerial_view_of_the_Maracan%C3%A3_Stadium.jpg")
   maraca.photo.attach(io: file, filename: "maraca.jpg")
+metropolitanoGuanguiltagua = Track.create!({ name: " QuitoRun", description: "2 vueltas en el parque Metropolitano Guanguiltagua", level: 3, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'De los Motilones E14-58 y Charapa, De Los Motilones E14-58, Quito 170137, Equador', end_address:'Av. Libertador Simón Bolivar y Km. 4 1/2, Interoceanica, Quito 170408, Equador'})
+
+
+
 
 puts "Creating Race"
 
