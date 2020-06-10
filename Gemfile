@@ -24,8 +24,13 @@ gem 'redis', '~> 4.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-# Omniauth Rubygem for authenticating users with Strava
-gem 'omniauth-strava'
+
+# A complete Ruby client for the Strava API v3.
+gem 'strava-ruby-client'
+gem "omniauth-strava"
+
+# Gemfile
+gem 'pundit'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
