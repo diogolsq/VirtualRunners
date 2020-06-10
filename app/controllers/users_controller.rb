@@ -15,6 +15,12 @@ class UsersController < ApplicationController
     #   infoWindow: render_to_string(partial: "info_window", locals: { user: @user }),
     #   image_url: helpers.asset_url('logo.png')
     # }]
+    client = Strava::Api::Client.new(
+      access_token: current_user.token
+    )
+    @athlete = client.athlete
+
+
   end
 
   private
