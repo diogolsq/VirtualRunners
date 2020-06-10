@@ -9,13 +9,13 @@
   </div>
   <% if @racewithuser.empty?  %>
     <div>
-      <%= link_to track_races_path(@track), method: :post do %>
+      <%= link_to track_races_path(@track), method: :post, remote:true do %>
         <p class='btn btn-danger'> Join that Race</p>
       <% end %>
     </div>
   <% else %>
     <div>
-      <%= link_to track_race_path(@track, @race), method: :DELETE do %>
+      <%= link_to track_race_path(@track, @race), method: :DELETE, remote: true do %>
         <p class='btn btn-danger'> Won't run anymore </p>
       <% end %>
     </div>
