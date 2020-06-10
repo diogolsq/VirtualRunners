@@ -16,7 +16,13 @@
 <div>
   <h3> Runners </h3>
   <% @users.each do |user| %>
-    <%= user.name  %>
-  <% end %>
+    <%= link_to user_path(user) do %>
+      <% if user.photo.attached? %>
+        <%= cl_image_path user.photo.key, class:'avatar'%>
+      <% else %>
+        <%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %>
+      <% end %>
+    <% end %>
+ <%end %>
 </div>
 
