@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :races, only:[:show, :create,:destroy]
     resources :messages, only:[:create]
   end
-
+  get "/tests/get_test", to: "tests#get_test"
 end
