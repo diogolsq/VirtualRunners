@@ -5,17 +5,22 @@
 <%= link_to "Create Race", new_track_path%>
 
 <div class="athlete-profile">
+  <div class="athlete-avatar">
+    <h1><%= @athlete.name %></h1>
+    <img src="<%= @athlete.profile_medium %>" alt="">
+  </div>
+  <div class="athlete-data">
 
 
-  <h1><%= @athlete.name %></h1>
-  <img src="<%= @athlete.profile_medium %>" alt="">
-  <%= @athlete.resource_state %>
-  <%= @athlete.city  %>
-  <%= @athlete.country %>
-  <%= @athlete.badge_type_id  %>
-  <%= @athlete.follower  %>
-  <%= @athlete.athlete_type  %>
 
+  <p><%= @athlete.resource_state %></p>
+  <p><%= @athlete.city  %></p>
+  <p><%= @athlete.country %></p>
+  <p><%= @athlete.badge_type_id  %></p>
+  <p><%= @athlete.follower  %></p>
+  <p><%= @athlete.athlete_type  %></p>
+
+  </div>
 </div>
 
 
