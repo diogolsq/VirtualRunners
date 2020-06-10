@@ -7,13 +7,17 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
-
-  <div>
-    <%= link_to track_races_path(@track), method: :post do %>
-      <p class='btn btn-danger'> Join that Race</p>
-    <% end %>
-
-  </div>
+  <% if @racewithuser.empty?  %>
+    <div>
+      <%= link_to track_races_path(@track), method: :post do %>
+        <p class='btn btn-danger'> Join that Race</p>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <p class='btn btn-danger'> Won't run anymore </p>
+    </div>
+  <% end %>
 </div>
 
 
