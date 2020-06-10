@@ -6,13 +6,17 @@
       <% @tracks.each do |track| %>
         <%= link_to track_path(track) do %>
 
-          <% if track.photo.key %>
+          <% if track.photo.attached? %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('<%= cl_image_path track.photo.key %>')">
-              <%= track.name %>
+              <div class="card-text">
+                <%= track.name %>
+              </div>
             </div>
           <% else %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{run})">
-              <%= track.name %>
+              <div class="card-text">
+                <%= track.name %>
+              </div>
             </div>
           <% end %>
         <% end %>
