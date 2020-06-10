@@ -23,18 +23,17 @@ class TracksController < ApplicationController
     @races = Race.where(track_id: @track.id)
     @users = []
 
-
     @races.each do |race|
       user = User.find(race.user_id)
       @users << user
     end
 
     @markers = [{
-        lat: @track.start_latitude,
-        lng: @track.start_longitude,
-        infoWindow: render_to_string(partial: "info_window_start", locals: { track: @track }),
-        image_url: helpers.asset_url('start_line.png')
-      }]
+      lat: @track.start_latitude,
+      lng: @track.start_longitude,
+      infoWindow: render_to_string(partial: "info_window_start", locals: { track: @track }),
+      image_url: helpers.asset_url('start_line.png')
+    }]
 
     @marker_end = {
       lat: @track.end_latitude,
@@ -43,6 +42,7 @@ class TracksController < ApplicationController
       image_url: helpers.asset_url('end_line.png')
     }
     @markers << @marker_end
+
   end
 
   def new
