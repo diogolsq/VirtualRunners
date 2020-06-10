@@ -32,7 +32,7 @@ class User < ApplicationRecord
       provider: auth["provider"],
       token: auth["credentials"]["token"],
       name: auth["info"]["name"],
-      refresh_token: auth["credentials"]["refresh_token"] ,
+      refresh_token: auth["credentials"]["refresh_token"],
       token_expiry: auth["credentials"]["exipires_at"],
       profile_img_url: auth["extra"]["raw_info"]["profile"]
     }
