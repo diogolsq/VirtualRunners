@@ -53,7 +53,7 @@ class TracksController < ApplicationController
     @track = Track.new(tracks_params)
 
     if @track.save
-      @chat = Chat.new(track_id:@track.id)
+      @chat = Chat.new(track_id: @track.id)
       @chat.save
       redirect_to track_path(@tracks)
 
