@@ -1,3 +1,17 @@
-<h1><%= @user.name %>
-<p> you can see this page in views/users/show</p>
-<%= link_to "Create Race", new_track_path%>
+<div class="show">
+
+  <h1><%= @user.name %>
+
+  <%= link_to edit_user_registration_path, class: "nav-link" do %>
+    <i class="fas fa-user-edit"></i>
+  <% end %>
+
+  <p>About me: <%= @user.Bio %></p>
+
+  <p>username : <%= @user.username %></p>
+  <p>Races number : <%= @user.races_number %></p>
+  <p>level : <%= @user.level %></p>
+
+
+  <%= link_to "Create Race", new_track_path%>
+</div>
