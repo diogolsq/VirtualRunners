@@ -9,10 +9,10 @@ class RacesController < ApplicationController
   def create
     @user = current_user
     @track = Track.find(params[:track_id])
-    @race = Race.new(user_id: @user.id, track_id: @track.track_id)
+    @race = Race.new(user_id: @user.id, track_id: @track.id)
     @race.save
     if @race.save
-      redirect_to user_path(@user), notice: "Joined in the race"
+      redirect_to track_path(@track), notice: "Joined in the race"
     else
     end
   end
