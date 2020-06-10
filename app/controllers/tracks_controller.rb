@@ -55,7 +55,7 @@ class TracksController < ApplicationController
     if @track.save
       @chat = Chat.new(track_id: @track.id)
       @chat.save
-      redirect_to track_path(@tracks)
+      redirect_to track_path(@track)
 
     else
       render :new
