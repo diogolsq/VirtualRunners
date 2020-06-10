@@ -1,10 +1,24 @@
 <h1>Virtual Runners</h1>
 
 
+  <div class="cards">
+    <% if @tracks %>
+      <% @tracks.each do |track| %>
+        <%= link_to track_path(track) do %>
 
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
+          <% if track.photo.key %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('<%= cl_image_path track.photo.key %>')">
+              <%= track.name %>
+            </div>
+          <% else %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{run})">
+              <%= track.name %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 
 
 
