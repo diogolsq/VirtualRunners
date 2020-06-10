@@ -18,7 +18,7 @@ class RacesController < ApplicationController
   end
 
   def destroy
-    redirect_to root_path, notice: 'you no longer in the race'
+    redirect_to track_path(Track.find(params[:track_id])), notice: 'you no longer in the race'
     @race.destroy
   end
 

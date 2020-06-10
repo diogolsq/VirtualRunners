@@ -29,6 +29,8 @@ class TracksController < ApplicationController
     end
     @user = current_user
     @racewithuser = Race.where(user_id:@user.id, track_id:@track.id)
+    @race = @racewithuser.first
+
 
     @markers = [{
       lat: @track.start_latitude,

@@ -15,7 +15,9 @@
     </div>
   <% else %>
     <div>
-      <p class='btn btn-danger'> Won't run anymore </p>
+      <%= link_to track_race_path(@track, @race), method: :DELETE do %>
+        <p class='btn btn-danger'> Won't run anymore </p>
+      <% end %>
     </div>
   <% end %>
 </div>
