@@ -1,5 +1,9 @@
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
+
 // import MapboxDirections from '@mapbox/mapbox-gl-directions';
 
 const fitMapToMarkers = (map, markers) => {
@@ -66,7 +70,10 @@ const initMapbox = () => {
     directions.setDestination(markers[1]['end_address']);
 
     directions.on();
-
+    setTimeout(function(){
+    document.getElementById('mapbox-directions-profile-cycling').click();
+    // document.getElementById('mapbox-directions-profile-walking').click();
+}, 1000);
 
   }
 };
