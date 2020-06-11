@@ -1,6 +1,6 @@
 import mapboxgl from 'mapbox-gl';
-
-
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+// import MapboxDirections from '@mapbox/mapbox-gl-directions';
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -28,10 +28,9 @@ const addMarkersToMap = (map, markers) => {
 };
 
 
-
-
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
+
 
 
   if (mapElement) { // only build a map if there's a div#map to inject into
@@ -43,11 +42,31 @@ const initMapbox = () => {
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
+    console.log(markers);
 
+    // logic to setup the search bar in the map
+    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //                                       mapboxgl: mapboxgl }));
 
     addMarkersToMap(map, markers);
 
     fitMapToMarkers(map, markers);
+
+    var directions = new MapboxDirections({
+          geocoder: {
+            proximity: [0, 0],
+          }, accessToken: mapboxgl.accessToken,
+             unit: 'metric',
+             profile: 'mapbox/walking'
+        });
+
+        map.addControl(directions, 'top-left');
+
+    directions.setOrigin(markers[0]['start_address']);
+    directions.setDestination(markers[1]['end_address']);
+
+    directions.on();
+
 
   }
 };
