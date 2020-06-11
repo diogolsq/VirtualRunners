@@ -3,5 +3,13 @@ class PagesController < ApplicationController
 
   def home
     @tracks = Track.all
+
+
+    if params[:query].present?
+      @products = Track.global_search(params[:query])
+    else
+      @tracks = Track.all
+    end
+
   end
 end
