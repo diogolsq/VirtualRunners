@@ -1,6 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-
+// import MapboxDirections from '@mapbox/mapbox-gl-directions';
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -30,8 +30,13 @@ const addMarkersToMap = (map, markers) => {
 
 
 
+
+
+
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
+
 
 
   if (mapElement) { // only build a map if there's a div#map to inject into
@@ -49,8 +54,17 @@ const initMapbox = () => {
 
     fitMapToMarkers(map, markers);
 
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-                                          mapboxgl: mapboxgl }));
+    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //                                       mapboxgl: mapboxgl }));
+
+    map.addControl(
+    new MapboxDirections({
+    accessToken: mapboxgl.accessToken
+    }),
+    'top-left'
+    );
+
+
 
   }
 };
