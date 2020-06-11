@@ -17,13 +17,13 @@ type="text/css"
   <% if @racewithuser.empty?  %>
     <div>
       <%= link_to track_races_path(@track), method: :POST, remote: true do %>
-        <p class='btn btn-danger'> Join that Race</p>
+        <p class='btn btn-danger'> Join this Race</p>
       <% end %>
     </div>
   <% else %>
     <div>
       <%= link_to track_race_path(@track, @race), method: :DELETE, remote: true do %>
-        <p class='btn btn-danger'> Won't run anymore </p>
+        <p class='btn btn-danger'> Cancel </p>
       <% end %>
     </div>
   <% end %>

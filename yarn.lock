@@ -4820,6 +4820,22 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+mapbox-gl-directions@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/mapbox-gl-directions/-/mapbox-gl-directions-3.0.3.tgz#e64db6bc48f1acf1b68b0e22045ace0f8690ae4b"
+  integrity sha1-5k22vEjxrPG2iw4iBFrOD4aQrks=
+  dependencies:
+    deep-assign "^2.0.0"
+    lodash.debounce "^4.0.6"
+    lodash.isequal "^4.2.0"
+    lodash.template "^4.2.5"
+    polyline "^0.2.0"
+    redux "^3.5.2"
+    redux-thunk "^2.1.0"
+    suggestions "1.3.0"
+    turf-extent "^1.0.4"
+    xtend "4.0.1"
+
 mapbox-gl@^1.10.1:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-1.10.1.tgz#7dbd53bdf2f78e45e125c1115e94dea286ef663c"
@@ -5849,6 +5865,11 @@ pnp-webpack-plugin@^1.5.0:
   integrity sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==
   dependencies:
     ts-pnp "^1.1.6"
+
+polyline@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/polyline/-/polyline-0.2.0.tgz#4f2b716ca81134a6cbaa488975d236ecb1cc2840"
+  integrity sha1-TytxbKgRNKbLqkiJddI27LHMKEA=
 
 popper.js@^1.16.1:
   version "1.16.1"
@@ -7710,6 +7731,14 @@ subtag@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/subtag/-/subtag-0.5.0.tgz#1728a8df5257fb98ded4fb981b2ac7af10cf58ba"
   integrity sha512-CaIBcTSb/nyk4xiiSOtZYz1B+F12ZxW8NEp54CdT+84vmh/h4sUnHGC6+KQXUfED8u22PQjCYWfZny8d2ELXwg==
+
+suggestions@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/suggestions/-/suggestions-1.3.0.tgz#0398d52c4315f356591bbcde0733fccf2bfe1567"
+  integrity sha1-A5jVLEMV81ZZG7zeBzP8zyv+FWc=
+  dependencies:
+    fuzzy "^0.1.1"
+    xtend "^4.0.0"
 
 suggestions@1.3.3:
   version "1.3.3"

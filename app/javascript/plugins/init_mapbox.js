@@ -28,12 +28,6 @@ const addMarkersToMap = (map, markers) => {
 };
 
 
-
-
-
-
-
-
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
@@ -48,22 +42,30 @@ const initMapbox = () => {
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
+    console.log(markers);
 
+    // logic to setup the search bar in the map
+    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //                                       mapboxgl: mapboxgl }));
 
     addMarkersToMap(map, markers);
 
     fitMapToMarkers(map, markers);
 
-    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-    //                                       mapboxgl: mapboxgl }));
+    var directions = new MapboxDirections({
+          geocoder: {
+            proximity: [0, 0],
+          }, accessToken: mapboxgl.accessToken,
+             unit: 'metric',
+             profile: 'mapbox/walking'
+        });
 
-    map.addControl(
-    new MapboxDirections({
-    accessToken: mapboxgl.accessToken
-    }),
-    'top-left'
-    );
+        map.addControl(directions, 'top-left');
 
+    directions.setOrigin(markers[0]['start_address']);
+    directions.setDestination(markers[1]['end_address']);
+
+    directions.on();
 
 
   }

@@ -35,6 +35,7 @@ class TracksController < ApplicationController
     @markers = [{
       lat: @track.start_latitude,
       lng: @track.start_longitude,
+      start_address: @track.start_address,
       infoWindow: render_to_string(partial: "info_window_start", locals: { track: @track }),
       image_url: helpers.asset_url('start_line.png')
     }]
@@ -42,6 +43,7 @@ class TracksController < ApplicationController
     @marker_end = {
       lat: @track.end_latitude,
       lng: @track.end_longitude,
+      end_address: @track.end_address,
       infoWindow: render_to_string(partial: "info_window_end", locals: { track: @track }),
       image_url: helpers.asset_url('end_line.png')
     }
