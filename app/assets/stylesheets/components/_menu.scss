@@ -1,4 +1,4 @@
-.footer {
+.menu {
   background: #F4F4F4;
   display: flex;
   align-items: center;
@@ -7,20 +7,20 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
-.footer-links {
+.menu-links {
   display: flex;
   align-items: center;
 }
-.footer-links a {
+.menu-links a {
   color: black;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
-.footer-links a:hover {
+.menu-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
+.menu .fa-heart {
   color: #D23333;
 }
