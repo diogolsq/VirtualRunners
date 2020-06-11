@@ -13,13 +13,13 @@ class RacesController < ApplicationController
     @race.save
     if @race.save
 
-      redirect_to track_path(@track, anchor: '#run'), notice: "Joined in the race"
+    redirect_to track_path(@track, anchor: '#runners'), notice: "Joined in the race"
     else
     end
   end
 
   def destroy
-    redirect_to track_path(Track.find(params[:track_id]), anchor:'#Join'), notice: 'you no longer in the race'
+    redirect_to track_path(Track.find(params[:track_id]), anchor: '#runners'), notice: 'you no longer in the race'
     @race.destroy
   end
 
