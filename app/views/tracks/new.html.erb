@@ -1,18 +1,18 @@
-<div class="form-centralize-review">
+<div class="form-centralize">
   <div class="form-borders">
     <h2>Create a track</h2>
     <%= simple_form_for (@track)  do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :level, collection: (1..5) %>
-      <%= f.input :distance %>
+      <%= f.input :distance, hint:'in km' %>
       <%= f.input :start_address %>
       <%= f.input :end_address %>
       <%= f.input :date %>
       <%= f.input :time_to_start %>
       <%= f.input :time_to_complete %>
-      <%= f.input :photo, as: :file, hint: 'pick a good picture to display your track' %>
-      <%= f.submit "Submit review", class: "btn btn-primary" %>
+      <%= f.input :photo, as: :file, hint: 'if you not pick a photo, it will be random generated for you' %>
+      <%= f.submit "Create this Race", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
