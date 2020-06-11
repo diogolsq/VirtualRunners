@@ -9,7 +9,7 @@
   </div>
   <% if @racewithuser.empty?  %>
     <div>
-      <%= link_to track_races_path(@track), method: :post, remote:true do %>
+      <%= link_to track_races_path(@track), method: :POST, remote: true do %>
         <p class='btn btn-danger'> Join that Race</p>
       <% end %>
     </div>
@@ -24,7 +24,7 @@
 
 
 <div>
-  <h3> Runners </h3>
+  <h3 id='runners'> Runners </h3>
   <% @users.each do |user| %>
     <%= link_to user_path(user) do %>
       <% if user.photo.attached? %>

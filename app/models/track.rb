@@ -1,4 +1,6 @@
 class Track < ApplicationRecord
+  include PgSearch::Model
+
   validates :name, :description, :level, :start_address, :end_address, :time_to_complete, presence: true
 
   has_many :races, dependent: :destroy
@@ -17,6 +19,15 @@ class Track < ApplicationRecord
   # end
 
   before_save :geocode_endpoints
+
+  pg_search_scope :global_search,
+    against: [:name, :distance, :level, :date, :number_of_racers, :description],
+    associated_against: {
+      users: [:name]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 
   private
 
