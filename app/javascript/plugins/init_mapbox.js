@@ -1,9 +1,10 @@
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+
+// Solving the problem of importing the right function from mapbox-gl-direction
 import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
-
 // import MapboxDirections from '@mapbox/mapbox-gl-directions';
 
 const fitMapToMarkers = (map, markers) => {
@@ -70,10 +71,30 @@ const initMapbox = () => {
     directions.setDestination(markers[1]['end_address']);
 
     directions.on();
-    setTimeout(function(){
-    document.getElementById('mapbox-directions-profile-cycling').click();
-    // document.getElementById('mapbox-directions-profile-walking').click();
-}, 1000);
+
+    // console.log(map.loaded())
+
+    // if (map.loaded()){
+    //   console.log('beep')
+    //   document.getElementById('mapbox-directions-profile-cycling').click();
+    //   document.getElementById('mapbox-directions-profile-walking').click();
+    // };
+
+  // Creating a logic to check if the map is loaded
+
+  function checkifmapisloaded() {
+      if(map.loaded() == false) {
+         window.setTimeout(checkifmapisloaded, 100); /* this checks if is map is loaded every 100 milliseconds*/
+      } else {
+       document.getElementById('mapbox-directions-profile-cycling').click();
+       document.getElementById('mapbox-directions-profile-walking').click();
+      }
+  }
+
+
+
+
+  checkifmapisloaded();
 
   }
 };
