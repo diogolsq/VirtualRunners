@@ -20,8 +20,8 @@
     <h2>Your stats</h2>
     <% if @race.status == "finished" %>
     <%= "time:#{@race.elapsed_time} #{@race.start_lat_lng} #{@race.end_lat_lng} avg: #{@race.average_speed} max: #{@race.max_speed}" %>
-    <% elsif @race.status == "Distance not completed" %>
-      <p>distance not completed</p>
+    <% elsif @race.status == "ongoing" %>
+      <p>ongoing</p>
     <% end %>
 
     <h2>Everyone stats</h2>
