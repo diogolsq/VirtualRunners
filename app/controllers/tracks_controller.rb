@@ -28,10 +28,47 @@ class TracksController < ApplicationController
       user = User.find(race.user_id)
       @users << user
     end
+    binding.pry
+
+
+
 
     if @race.present?
-      find_user_race
+         @race = current_user.races.find(params[:id])
+          client = Strava::Api::Client.new(
+              access_token: current_user.token
+          )
+
+          activities = client.athlete_activities
+          activity = activities.first
+          pactivity = activities[1]
+
+          if pactivity.id.to_s == @race.id
+            @race.strava_activity_id = activity.strava_activity_id.to_s
+            @race.distance = activity.distance
+            @race.elapsed_time = activity.elapsed_time
+            @race.start_lat_lng = activity.start_latlng
+            @race.end_lat_lng = activity.end_latlng
+            @race.average_speed = activity.average_speed
+            @race.max_speed = activity.max_speed
+            if activity.distance >= pactivity.distance
+              @race.status = "finished"
+            else
+              @race.status = "ongoing"
+            end
+            binding.pry
+          end
+          @race.save
+          return true
     end
+binding.pry
+
+
+
+
+
+
+    @race = @track.races.find_by(user: current_user)
 
     @markers = [{
       lat: @track.start_latitude,
@@ -106,7 +143,10 @@ class TracksController < ApplicationController
       else
         @race.status = "ongoing"
       end
+      binding.pry
     end
+    @race.save
+    return true
   end
 
   def find_tracks
