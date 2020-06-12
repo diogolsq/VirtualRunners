@@ -1,11 +1,16 @@
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
-
+// Solving the problem of importing the right function from mapbox-gl-direction
+import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
+// import MapboxDirections from '@mapbox/mapbox-gl-directions';
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  map.fitBounds(bounds, { padding: 100, maxZoom: 15, duration: 0 });
 };
 
 
@@ -28,10 +33,9 @@ const addMarkersToMap = (map, markers) => {
 };
 
 
-
-
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
+
 
 
   if (mapElement) { // only build a map if there's a div#map to inject into
@@ -43,11 +47,54 @@ const initMapbox = () => {
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
+    console.log(markers);
 
+    // logic to setup the search bar in the map
+    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //                                       mapboxgl: mapboxgl }));
 
     addMarkersToMap(map, markers);
 
     fitMapToMarkers(map, markers);
+
+    var directions = new MapboxDirections({
+          geocoder: {
+            proximity: [0, 0],
+          }, accessToken: mapboxgl.accessToken,
+             unit: 'metric',
+             profile: 'mapbox/walking'
+        });
+
+        map.addControl(directions, 'top-left');
+
+    directions.setOrigin(markers[0]['start_address']);
+    directions.setDestination(markers[1]['end_address']);
+
+    directions.on();
+
+    // console.log(map.loaded())
+
+    // if (map.loaded()){
+    //   console.log('beep')
+    //   document.getElementById('mapbox-directions-profile-cycling').click();
+    //   document.getElementById('mapbox-directions-profile-walking').click();
+    // };
+
+  // Creating a logic to check if the map is loaded
+
+  function checkifmapisloaded() {
+      if(map.loaded() == false) {
+         window.setTimeout(checkifmapisloaded, 100); /* this checks if is map is loaded every 100 milliseconds*/
+      } else {
+       document.getElementById('mapbox-directions-profile-cycling').click();
+       document.getElementById('mapbox-directions-profile-walking').click();
+      }
+  }
+
+
+
+
+  checkifmapisloaded();
 
   }
 };

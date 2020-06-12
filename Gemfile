@@ -73,3 +73,6 @@ gem 'cloudinary', '~> 1.12.0'
 
 # Working with geocoding and mapbox
 gem 'geocoder'
+
+# it will help us to implement the search in our DB, it is plug and play
+gem 'pg_search', '~> 2.3.0'

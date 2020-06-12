@@ -1,0 +1,25 @@
+.menu {
+  // display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10%;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.menu-links {
+  display: flex;
+  align-items: center;
+}
+.menu-links a {
+  color: blue;
+  opacity: 0.3;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 8px 10px;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+.menu-links a:hover {
+  opacity: 1;
+}

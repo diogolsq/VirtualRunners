@@ -1,0 +1,45 @@
+.show{
+padding:16px;
+}
+
+.show h1 {
+font-size:25px ;
+}
+
+.show p {
+font-size: 15px;
+}
+
+
+.show-img-name {
+  display:flex;
+
+  flex-direction:column;
+  align-items:center;
+  box-shadow:2px 2px 3px rgba(0,0,0,0.4);
+}
+
+.show-img-name img {
+  border-radius: 50%;
+  height:240px;
+  width:200px;
+}
+
+.show-top{
+  display:flex;
+  justify-content:space-around;
+
+}
+
+.show-info{
+  display:flex;
+  flex-direction:column;
+  width:400px;
+  box-shadow:2px 2px 3px rgba(0,0,0,0.4);
+}
+
+.show-scheduled-races {
+  display:flex;
+  flex-direction:column;
+
+}

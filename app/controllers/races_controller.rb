@@ -16,12 +16,13 @@ class RacesController < ApplicationController
     @race = Race.new(user_id: @user.id, track_id: @track.id)
     @race.distance = @track.distance * 1000
     if @race.save
-      redirect_to track_path(@track), notice: "Joined in the race"
+      redirect_to track_path(@track), notice: "Joined in the race"     
+    else
     end
   end
 
   def destroy
-    redirect_to root_path, notice: 'you no longer in the race'
+    redirect_to track_path(Track.find(params[:track_id]), anchor: '#runners'), notice: 'you no longer in the race'
     @race.destroy
   end
 

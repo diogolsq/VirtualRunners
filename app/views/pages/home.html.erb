@@ -1,4 +1,4 @@
-<h1>Virtual Runners</h1>
+<h1 id='home-title-header' class='top'>Virtual Runners</h1>
 
 
   <div class="cards">
@@ -23,6 +23,19 @@
       <% end %>
     <% end %>
   </div>
+  <br>
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div class="search-form-control form-group" id='search-bar'>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find the perfect race for you"
+    %>
+    <%#= submit_tag "Search", class: "btn btn-primary" %>
+    <button name="button" type="submit" class="btn btn-primary form-button">
+      <i class="fas fa-search"></i> Search
+    </button>
 
-
+    </div>
+  <% end %>
 

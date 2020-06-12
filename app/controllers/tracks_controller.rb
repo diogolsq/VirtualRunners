@@ -28,6 +28,10 @@ class TracksController < ApplicationController
       user = User.find(race.user_id)
       @users << user
     end
+    @user = current_user
+    @racewithuser = Race.where(user_id:@user.id, track_id:@track.id)
+    @race = @racewithuser.first
+
 
     if @race.present?
          @race = current_user.races.find(params[:id])
@@ -65,6 +69,7 @@ class TracksController < ApplicationController
     @markers = [{
       lat: @track.start_latitude,
       lng: @track.start_longitude,
+      start_address: @track.start_address,
       infoWindow: render_to_string(partial: "info_window_start", locals: { track: @track }),
       image_url: helpers.asset_url('start_line.png')
     }]
@@ -72,6 +77,7 @@ class TracksController < ApplicationController
     @marker_end = {
       lat: @track.end_latitude,
       lng: @track.end_longitude,
+      end_address: @track.end_address,
       infoWindow: render_to_string(partial: "info_window_end", locals: { track: @track }),
       image_url: helpers.asset_url('end_line.png')
     }

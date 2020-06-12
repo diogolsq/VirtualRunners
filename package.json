@@ -2,6 +2,8 @@
   "name": "VirtualRunners",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-directions": "^4.0.3",
+    "@mapbox/mapbox-gl-geocoder": "^4.5.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -9,6 +11,7 @@
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "mapbox-gl": "^1.10.1",
+    "mapbox-gl-directions": "^3.0.3",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
   },

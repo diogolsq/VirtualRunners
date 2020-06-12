@@ -36,10 +36,12 @@ puts "Creating Tracks"
 volta_na_lagoa = Track.create!({ name: "Volta na Lagoa Rodrigo de Freitas", description: "Vamos dar 1 volta na lagoa", level: 2, date: Date.parse('20-06-2020'), time_to_start: Time.parse("June 20 18:00"), time_to_complete: Time.parse("June 20 20:00"), start_address:'Avenida Epitácio Pessoa 1, Rio de <Janeiro></Janeiro>', end_address:'Avenida Borges de Medeiros 1, Rio de Janeiro'})
  file = open("https://media-cdn.tripadvisor.com/media/photo-s/0a/be/77/97/a-lagoa-que-fica-bem.jpg")
   volta_na_lagoa.photo.attach(io: file, filename: "lagoa.jpg")
-maraca = Track.create!({ name: "Corrida em volta do maraca ", description: "2 voltas no maraca", level: 1, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Avenida Maracanã', end_address:'Estátua do Bellini'})
+maraca = Track.create!({ name: "Corrida em volta do maraca ", description: "2 voltas no maraca", level: 1, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Avenida Maracanã, Rio de Janeiro', end_address:'Estátua do Bellini, Rio de Janeiro'})
  file = open("https://upload.wikimedia.org/wikipedia/commons/b/b4/Aerial_view_of_the_Maracan%C3%A3_Stadium.jpg")
   maraca.photo.attach(io: file, filename: "maraca.jpg")
-metropolitanoGuanguiltagua = Track.create!({ name: " QuitoRun", description: "2 vueltas en el parque Metropolitano Guanguiltagua", level: 3, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'De los Motilones E14-58 y Charapa, De Los Motilones E14-58, Quito 170137, Equador', end_address:'Av. Libertador Simón Bolivar y Km. 4 1/2, Interoceanica, Quito 170408, Equador'})
+lemeaoleblon = Track.create!({ name: " Rio Beach Run", description: "Run in Rio's beach ", level: 2, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Pedra do Leme, Rio de Janeiro', end_address:'Mirante Leblon, Rio de Janeiro'})
+ file = open("https://greatruns.com/wp-content/uploads/2016/11/Rio-Cover-e1478717116196.jpg")
+  lemeaoleblon.photo.attach(io: file, filename: "lemeleblon.jpg")
 
 
 
