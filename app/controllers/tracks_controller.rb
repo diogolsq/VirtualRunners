@@ -44,7 +44,7 @@ class TracksController < ApplicationController
           activity = activities.first
           pactivity = activities[1]
 
-
+          if pactivity
             if pactivity.id.to_s == @race.strava_activity_id
               @race.strava_activity_id = activity.id.to_s
               @race.distance = activity.distance
@@ -62,6 +62,7 @@ class TracksController < ApplicationController
           end
           return true
     end
+
 
     @race = @track.races.find_by(user: current_user)
 
