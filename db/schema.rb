@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_210128) do
+ActiveRecord::Schema.define(version: 2020_06_12_020526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_210128) do
     t.string "end_lat_lng", default: [], array: true
     t.float "average_speed"
     t.float "max_speed"
+    t.string "status", default: "open"
     t.index ["track_id"], name: "index_races_on_track_id"
     t.index ["user_id"], name: "index_races_on_user_id"
   end

@@ -58,7 +58,18 @@ def finished_running
   binding.pry
 
   if pactivity.id.to_s == @race.id
-    @race.id = activity.id.to_s
+    @race.strava_activity_id = activity.strava_activity_id.to_s
+    @race.distance = activity.distance
+    @race.elapsed_time = activity.elapsed_time
+    @race.start_lat_lng = activity.start_latlng
+    @race.end_lat_lng = activity.end_latlng
+    @race.average_speed = activity.average_speed
+    @race.max_speed = activity.max_speed
+    if activity.distance >= pactivity.distance
+      @race.status = "finished"
+    else
+      @race.status = "Distance not completed"
+    end
   end
 
 end
