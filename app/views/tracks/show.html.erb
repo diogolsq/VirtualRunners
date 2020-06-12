@@ -1,3 +1,26 @@
+<div class="container-track-show col-12">
+  <%=# case 1 before joining race  %>
+  <% if !@race.present? %>
+
+      <div class="track-descrption col-12">
+        <h2> @track.name </h2>
+        <h3>Race Details</h3>
+        <p><%= "#{@track.distance} Km - #{@track.distance * 1.6} Miles" %><p>
+        <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
+        <p>Description</p>
+        <p><%=@track.description%></p>
+      </div>
+
+
+  <% else %>
+  <% end %>
+</div>
+
+
+
+
+
+
 <h1><%= @track.name %></h1>
 
 
