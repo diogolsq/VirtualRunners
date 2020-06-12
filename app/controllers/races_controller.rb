@@ -71,7 +71,6 @@ def finished_running
       @race.status = "Distance not completed"
     end
   end
-
 end
 
 =begin

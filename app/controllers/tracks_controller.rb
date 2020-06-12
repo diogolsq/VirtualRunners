@@ -21,8 +21,9 @@ class TracksController < ApplicationController
   def show
     @track.number_of_racers = Race.where(track_id: @track.id).count
     @races = Race.where(track_id: @track.id)
+    @finished_races = Race.where(status: "finished")
     @users = []
-    @race = @track.races.find_by(user: current_user)
+    @user_race = @track.races.find_by(user: current_user)
     @races.each do |race|
       user = User.find(race.user_id)
       @users << user

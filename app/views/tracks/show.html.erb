@@ -26,7 +26,12 @@
 
 
 
-
+<h2>Your stats</h2>
+<% if @user_race.status == "finished" %>
+<%= "time:#{@user_race.elapsed_time} #{@user_race.start_lat_lng} #{@user_race.end_lat_lng} avg: #{@user_race.average_speed} max: #{@user_race.max_speed}" %>
+<% elsif @user_race.status == "Distance not completed" %>
+  <p>distance not completed</p>
+<% end %>
 
 
 
