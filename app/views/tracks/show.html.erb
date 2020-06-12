@@ -10,33 +10,43 @@
 
 
 <% if @race.present? %>
+
+
   <% if @race.strava_activity_id.present? %>
+
     <button class="btn btn-light" disabled>Go to strava and start running</button> %>
     <%= link_to "Finished Running", finished_running_race_path(@race), method: "get", class: "btn btn-primary"  %>
+
+    <h2>Your stats</h2>
+    <% if @race.status == "finished" %>
+    <%= "time:#{@race.elapsed_time} #{@race.start_lat_lng} #{@race.end_lat_lng} avg: #{@race.average_speed} max: #{@race.max_speed}" %>
+    <% elsif @race.status == "Distance not completed" %>
+      <p>distance not completed</p>
+    <% end %>
+
+    <h2>Everyone stats</h2>
+    <% @finished_races.each do |race| %>
+      <p><%= race.elapsed_time %></p>
+    <% end %>
+
+
+
   <% elsif @track.date == Date.today %>
     <%= link_to "Start Running", start_running_race_path(@race), method: "post", class: "btn btn-primary" %>
   <% else %>
     <button class="btn btn-primary" disabled>Not the time yet</button>
   <% end %>
+
 <% else  %>
+
   <%= simple_form_for [@track, Race.new]  do |f| %>
     <%= f.submit "Join Race", class: "btn btn-primary" %>
   <% end %>
+
 <% end %>
 
 
 
-<h2>Your stats</h2>
-<% if @user_race.status == "finished" %>
-<%= "time:#{@user_race.elapsed_time} #{@user_race.start_lat_lng} #{@user_race.end_lat_lng} avg: #{@user_race.average_speed} max: #{@user_race.max_speed}" %>
-<% elsif @user_race.status == "Distance not completed" %>
-  <p>distance not completed</p>
-<% end %>
-
-<h2>Everyone stats</h2>
-<% @finished_races.each do |race| %>
-  <p><%= race.elapsed_time %></p>
-<% end %>
 
 
 
