@@ -5,7 +5,7 @@ require 'omniauth-strava'
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   config.omniauth :strava, ENV["STRAVA_CLIENT_ID"], ENV["STRAVA_CLIENT_SECRET"],
-    scope: "activity:read_all,profile:read_all"
+    scope: "activity:read_all,profile:read_all,activity:write"
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.

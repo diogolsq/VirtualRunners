@@ -1,4 +1,48 @@
 <h1><%= @track.name %></h1>
+
+
+
+
+<% if @race.present? %>
+
+
+  <% if @race.strava_activity_id.present? %>
+
+    <button class="btn btn-light" disabled>Go to strava and start running</button> %>
+    <%= link_to "Finished Running", track_path(@track),class: "btn btn-primary"  %>
+
+    <h2>Your stats</h2>
+    <% if @race.status == "finished" %>
+    <%= "time:#{@race.elapsed_time} #{@race.start_lat_lng} #{@race.end_lat_lng} avg: #{@race.average_speed} max: #{@race.max_speed}" %>
+    <% elsif @race.status == "ongoing" %>
+      <p>ongoing</p>
+    <% end %>
+
+    <h2>Everyone stats</h2>
+    <% @finished_races.each do |race| %>
+      <p><%= race.elapsed_time %></p>
+    <% end %>
+
+
+
+  <% elsif @track.date == Date.today %>
+    <%= link_to "Start Running", start_running_race_path(@race), method: "post", class: "btn btn-primary" %>
+  <% else %>
+    <button class="btn btn-primary" disabled>Not the time yet</button>
+  <% end %>
+
+<% else  %>
+
+  <%= simple_form_for [@track, Race.new]  do |f| %>
+    <%= f.submit "Join Race", class: "btn btn-primary" %>
+  <% end %>
+
+<% end %>
+
+
+
+
+
 <!-- <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script> -->
 <link
 rel="stylesheet"
@@ -28,6 +72,7 @@ type="text/css"
       <% end %>
     </div>
   <% end %>
+
 
 
 <div>
