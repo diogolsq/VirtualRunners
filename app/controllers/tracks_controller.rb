@@ -34,7 +34,8 @@ class TracksController < ApplicationController
 
 
     if @race.present?
-         @race = current_user.races.find(params[:id])
+
+          @race = @track.races.find_by(user: current_user)
           client = Strava::Api::Client.new(
               access_token: current_user.token
           )
