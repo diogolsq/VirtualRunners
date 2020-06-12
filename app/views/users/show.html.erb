@@ -23,6 +23,33 @@
       </div>
     </div>
   </div>
+  <div class="show-scheduled-races">
+    <h2>Scheduled Races</h2>
+    <% @raceopen.each do |race|%>
+
+      <% track = Track.find(race.track_id) %>
+
+      <%= link_to track_path(track) do%>
+        <%=  track.name %>
+      <% end %>
+
+    <% end %>
+  </div>
+
+  <div class="show-past-races">
+    <h2>Past Races</h2>
+    <% @raceclose.each do |race|%>
+
+      <% track = Track.find(race.track_id) %>
+
+      <%= link_to track_path(track) do%>
+        <%=  track.name %>
+      <% end %>
+
+    <% end %>
+
+
+  </div>
 
 
 </div>
