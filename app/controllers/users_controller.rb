@@ -7,6 +7,21 @@ class UsersController < ApplicationController
   end
 
   def show
+
+    @races = Race.where(user_id: @user.id)
+
+    @raceopen = []
+    @raceclose = []
+
+    @races.each do |race|
+      track = Track.find(race.track_id)
+      if track.status == 'open'
+        @raceopen << race
+      else
+        @raceclose << race
+
+      end
+    end
     # authorize @user
 
     # @markers = [{
@@ -23,5 +38,3 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 end
-
-
