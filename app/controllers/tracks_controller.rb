@@ -28,10 +28,6 @@ class TracksController < ApplicationController
       user = User.find(race.user_id)
       @users << user
     end
-    binding.pry
-
-
-
 
     if @race.present?
          @race = current_user.races.find(params[:id])
@@ -43,8 +39,8 @@ class TracksController < ApplicationController
           activity = activities.first
           pactivity = activities[1]
 
-          if pactivity.id.to_s == @race.id
-            @race.strava_activity_id = activity.strava_activity_id.to_s
+          if pactivity.id.to_s == @race.strava_activity_id
+            @race.strava_activity_id = activity.id.to_s
             @race.distance = activity.distance
             @race.elapsed_time = activity.elapsed_time
             @race.start_lat_lng = activity.start_latlng
@@ -56,14 +52,10 @@ class TracksController < ApplicationController
             else
               @race.status = "ongoing"
             end
-            binding.pry
+
           end
-          @race.save
           return true
     end
-binding.pry
-
-
 
 
 
@@ -143,7 +135,6 @@ binding.pry
       else
         @race.status = "ongoing"
       end
-      binding.pry
     end
     @race.save
     return true
