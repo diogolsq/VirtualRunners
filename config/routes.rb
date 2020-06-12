@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   resources :races, only: [:destroy] do
     member do
       post 'start_running'
-      get 'finished_running'
     end
     #collection do
       #post "strava_api"
