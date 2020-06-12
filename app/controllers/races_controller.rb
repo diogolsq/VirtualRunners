@@ -1,5 +1,5 @@
 class RacesController < ApplicationController
-  require 'dotenv/load'
+  require 'dotenv/load' if Rails.env.development?
   require 'strava-ruby-client'
   require 'webrick'
 
