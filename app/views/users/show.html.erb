@@ -1,17 +1,28 @@
 <div class="show">
+  <div class="show-top">
+    <div class="show-img-name">
+      <%= cl_image_tag @user.photo.key, crop: :fill, class: "profile-pic", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false if @user.photo.attached?%>
+      <%= image_tag "avatar-default-copy.png", crop: :fill, class: "profile-pic", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false unless @user.photo.attached?%>
 
-  <h1><%= @user.name %>
+      <h1><%= @user.name %>
+    </div>
+    <div class="show-info">
 
-  <%= link_to edit_user_registration_path, class: "nav-link" do %>
-    <i class="fas fa-user-edit"></i>
-  <% end %>
-
-  <p>About me: <%= @user.Bio %></p>
-
-  <p>username : <%= @user.username %></p>
-  <p>Races number : <%= @user.races_number %></p>
-  <p>level : <%= @user.level %></p>
+      <%= link_to "Create your own Race", new_track_path, class:"btn btn-danger"%>
 
 
-  <%= link_to "Create Race", new_track_path%>
+      <div class="show-decription">
+        <%= link_to edit_user_registration_path, class: "nav-link" do %>
+          <i class="fas fa-user-edit"></i>
+        <% end %>
+        <p>About me: <%= @user.Bio %></p>
+
+        <p>username : <%= @user.username %></p>
+        <p>Races number : <%= @user.races_number %></p>
+        <p>level : <%= @user.level %></p>
+      </div>
+    </div>
+  </div>
+
+
 </div>
