@@ -1,5 +1,6 @@
 .track-map {
   height:500px;
+  margin:0;
 }
 
 
@@ -8,4 +9,13 @@
   height:500px;
   align-items:center;
   justify-content:space-around;
+}
+
+.mapbox-directions-steps {
+  display:none;
+}
+
+
+#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left > div > div.directions-control.directions-control-inputs > div > div.mapbox-directions-profile.mapbox-directions-component-keyline.mapbox-directions-clearfix {
+  display:none;
 }
