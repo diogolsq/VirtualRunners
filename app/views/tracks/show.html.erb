@@ -1,14 +1,22 @@
 <div class="container-track-show col-12">
-  <%=# case 1 before joining race  %>
+  <%# case 1 before joining race  %>
   <% if !@race.present? %>
 
-      <div class="track-descrption col-12">
-        <h2> @track.name </h2>
+      <div class="track-descrption col-12 mb-5">
+        <h2> <%= @track.name %> </h2>
         <h3>Race Details</h3>
         <p><%= "#{@track.distance} Km - #{@track.distance * 1.6} Miles" %><p>
         <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
         <p>Description</p>
         <p><%=@track.description%></p>
+        <%# join race button %>
+        <%= simple_form_for [@track, Race.new]  do |f| %>
+          <%= f.submit "Join Race", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+
+      <div class="map-container">
+
       </div>
 
 
@@ -82,6 +90,8 @@ type="text/css"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
+
+
   <% if @racewithuser.empty?  %>
     <div>
       <%= link_to track_races_path(@track), method: :POST, remote: true do %>

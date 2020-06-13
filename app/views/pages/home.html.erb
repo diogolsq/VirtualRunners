@@ -1,41 +1,8 @@
-<h1 id='home-title-header' class='top'>Virtual Runners</h1>
 
-
-  <div class="cards">
-    <% if @tracks %>
-      <% @tracks.each do |track| %>
-        <%= link_to track_path(track) do %>
-
-          <% if track.photo.attached? %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('<%= cl_image_path track.photo.key %>')">
-              <div class="card-text">
-                <%= track.name %>
-              </div>
-            </div>
-          <% else %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{run})">
-              <div class="card-text">
-                <%= track.name %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/b7ce3171686157.5bce12a240e68.jpg);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
   </div>
-  <br>
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-    <div class="search-form-control form-group" id='search-bar'>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find the perfect race for you"
-    %>
-    <%#= submit_tag "Search", class: "btn btn-primary" %>
-    <button name="button" type="submit" class="btn btn-primary form-button">
-      <i class="fas fa-search"></i> Search
-    </button>
-
-    </div>
-  <% end %>
-
+</div>
