@@ -25,6 +25,9 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -33,4 +36,17 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+
+  initSweetalert('#sweet-alert-join', {
+    title: "Race Joinned",
+    text: "You can check it out on your profile",
+    icon: "success"
+  }).then(function() {
+    window.location = location.reload();
+  });
+
+
+
 });
+
+

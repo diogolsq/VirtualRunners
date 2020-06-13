@@ -56,7 +56,7 @@ type="text/css"
   <% if @racewithuser.empty?  %>
     <div>
       <%= link_to track_races_path(@track), method: :POST, remote: true do %>
-        <p class='btn btn-danger'> Join this Race</p>
+        <p class='btn btn-danger' id='sweet-alert-join'> Join this Race</p>
       <% end %>
     </div>
   <% else %>
@@ -66,6 +66,7 @@ type="text/css"
       <% end %>
     </div>
   <% end %>
+
 
 
 
