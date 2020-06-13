@@ -33,6 +33,23 @@ class TracksController < ApplicationController
     @race = @racewithuser.first
 
 
+    @markers = [{
+      lat: @track.start_latitude,
+      lng: @track.start_longitude,
+      start_address: @track.start_address,
+      infoWindow: render_to_string(partial: "info_window_start", locals: { track: @track }),
+      image_url: helpers.asset_url('start_line.png')
+    }]
+
+    @marker_end = {
+      lat: @track.end_latitude,
+      lng: @track.end_longitude,
+      end_address: @track.end_address,
+      infoWindow: render_to_string(partial: "info_window_end", locals: { track: @track }),
+      image_url: helpers.asset_url('end_line.png')
+    }
+    @markers << @marker_end
+
     if @race.present?
 
           @race = @track.races.find_by(user: current_user)
@@ -63,27 +80,12 @@ class TracksController < ApplicationController
           return true
     end
 
-
     @race = @track.races.find_by(user: current_user)
-
-    @markers = [{
-      lat: @track.start_latitude,
-      lng: @track.start_longitude,
-      start_address: @track.start_address,
-      infoWindow: render_to_string(partial: "info_window_start", locals: { track: @track }),
-      image_url: helpers.asset_url('start_line.png')
-    }]
-
-    @marker_end = {
-      lat: @track.end_latitude,
-      lng: @track.end_longitude,
-      end_address: @track.end_address,
-      infoWindow: render_to_string(partial: "info_window_end", locals: { track: @track }),
-      image_url: helpers.asset_url('end_line.png')
-    }
-    @markers << @marker_end
-
   end
+
+
+
+
 
   def new
     @track = Track.new

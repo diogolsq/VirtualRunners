@@ -1,8 +1,6 @@
 <h1><%= @track.name %></h1>
 
 
-
-
 <% if @race.present? %>
 
 
@@ -13,7 +11,7 @@
 
     <h2>Your stats</h2>
     <% if @race.status == "finished" %>
-    <%= "time:#{@race.elapsed_time} #{@race.start_lat_lng} #{@race.end_lat_lng} avg: #{@race.average_speed} max: #{@race.max_speed}" %>
+      <%= "time:#{@race.elapsed_time} #{@race.start_lat_lng} #{@race.end_lat_lng} avg: #{@race.average_speed} max: #{@race.max_speed}" %>
     <% elsif @race.status == "ongoing" %>
       <p>ongoing</p>
     <% end %>
@@ -32,10 +30,6 @@
   <% end %>
 
 <% else  %>
-
-  <%= simple_form_for [@track, Race.new]  do |f| %>
-    <%= f.submit "Join Race", class: "btn btn-primary" %>
-  <% end %>
 
 <% end %>
 

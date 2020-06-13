@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
 
   resources :tracks, only: [:show, :new, :create, :edit, :update, :destroy] do
-    resources :races, only: [:show, :create]
+    resources :races, only: [:show, :create, :destroy]
     resources :messages, only: [:create]
   end
   get "/tests/get_test", to: "tests#get_test"
