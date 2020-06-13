@@ -28,3 +28,21 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.banner .container {
+  margin-left: 30px;
+}
+
+.banner .btn {
+  background-color: $turquoise
+
+}
+
+.banner a {
+  font-size: 24px;
+}
+
+.banner .space-between {
+  height: 10px;
+  background-color: transparent;
+}
