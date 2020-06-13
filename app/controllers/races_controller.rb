@@ -16,7 +16,8 @@ class RacesController < ApplicationController
     @race = Race.new(user_id: @user.id, track_id: @track.id)
     @race.distance = @track.distance*1000
     if @race.save
-      redirect_to track_path(@track), notice: "Joined in the race"
+      sleep(2)
+      redirect_to track_path(@track)
     else
     end
   end
