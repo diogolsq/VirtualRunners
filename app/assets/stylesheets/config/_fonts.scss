@@ -4,7 +4,9 @@
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
-$home-title: 'Titillium Web', sans-serif;
+$home-title: 'Titillium Web', "sans-serif", 700px;
+$other-titles: 'Titillium Web', "sans-serif", 600px;
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
