@@ -54,15 +54,22 @@
 }
 
 .turquoise-box {
+  position: relative;
   height: 600px;
   weight: 100%;
   background-color: $turquoise;
+  z-index: 2;
 }
 
 .turquoise-box:after {
-  background-color: red;
   position: absolute;
+  z-index: -1;
   width: 100%;
-  height: 100%;
+  height: 200px;
+  content: "";
+  background: inherit;
+  top: 0;
+  transform-origin: left top;
+  transform: skewY(-4deg);
 }
 
