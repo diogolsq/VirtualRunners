@@ -102,3 +102,31 @@
   margin-top: -124px;
 }
 
+.grid {
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  align-self: center;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.grids {
+display: flex;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 16px;
+}
+
+@media (min-width: 576px) {
+  .grids {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
