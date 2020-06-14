@@ -14,15 +14,17 @@ font-size: 15px;
 .show-img-name {
   display:flex;
   padding:4px;
+  width:100%;
   flex-direction:column;
   align-items:center;
   box-shadow:2px 2px 3px rgba(0,0,0,0.4);
+  border-radius:8px;
+  background-color:#48A2D6;
 }
 
 .show-img-name img {
   border-radius: 50%;
-  height:240px;
-  width:200px;
+  width:160px;
 }
 
 .show-top{
@@ -43,4 +45,12 @@ font-size: 15px;
   display:flex;
   flex-direction:column;
 
+}
+
+.show-img-name-status {
+font-size:20px;
+color:white;
+display:flex;
+justify-content: space-between;
+align-items: center;
 }
