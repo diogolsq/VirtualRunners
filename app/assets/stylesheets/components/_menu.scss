@@ -11,8 +11,7 @@
   align-items: center;
 }
 .menu-links a {
-  color: blue;
-  opacity: 0.3;
+  color: rgb(150,150,150);
   text-decoration: none;
   font-size: 24px;
   padding: 8px 10px;
@@ -22,4 +21,13 @@
 }
 .menu-links a:hover {
   opacity: 1;
+}
+
+
+.menu-icon {
+  color:black;
+}
+
+.menu-icon:hover {
+  color:#1F919F;
 }
