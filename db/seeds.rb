@@ -40,7 +40,7 @@ volta_na_lagoa = Track.create!({ name: "Volta na Lagoa Rodrigo de Freitas", desc
 maraca = Track.create!({ name: "Corrida em volta do maraca ", description: "2 voltas no maraca", distance: 21, level: 1, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Avenida Maracanã, Rio de Janeiro', end_address:'Estátua do Bellini, Rio de Janeiro'})
  file = open("https://upload.wikimedia.org/wikipedia/commons/b/b4/Aerial_view_of_the_Maracan%C3%A3_Stadium.jpg")
   maraca.photo.attach(io: file, filename: "maraca.jpg")
-lemeaoleblon = Track.create!({ name: " Rio Beach Run", description: "Run in Rio's beach ", distance: 42, level: 2, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Pedra do Leme, Rio de Janeiro', end_address:'Mirante Leblon, Rio de Janeiro'})
+lemeaoleblon = Track.create!({ name: " Rio Beach Run", description: "Run in Rio's beach ", distance: 7.90, level: 2, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Pedra do Leme, Rio de Janeiro', end_address:'Mirante Leblon, Rio de Janeiro'})
  file = open("https://greatruns.com/wp-content/uploads/2016/11/Rio-Cover-e1478717116196.jpg")
   lemeaoleblon.photo.attach(io: file, filename: "lemeleblon.jpg")
 
