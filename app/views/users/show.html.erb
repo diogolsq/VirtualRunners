@@ -4,7 +4,12 @@
       <%= cl_image_tag @user.photo.key, crop: :fill, class: "profile-pic", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false if @user.photo.attached?%>
       <%= image_tag "avatar-default-copy.png", crop: :fill, class: "profile-pic", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false unless @user.photo.attached?%>
 
-      <h1><%= @user.name %>
+      <h1><%= @user.username %>
+      <div class="show-img-name-status">
+        <p><i class="fas fa-running"></i> : <%= 0 if @user.races_number.nil? %> <%= @user.races_number  %></p>
+        <p>lvl : <%= @user.level %></p>
+
+      </div>
     </div>
   </div>
   <div class="show-top">

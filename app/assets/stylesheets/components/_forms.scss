@@ -21,9 +21,18 @@
 
 .form-group {
   display:flex;
+  padding:20px;
 }
 
 .form-button {
   display:flex;
   align-items:center;
+  background-color:#1F919F;
+  color:white;
+  border:1px solid #1F919F;
+}
+
+.form-button:hover {
+  background-color:#1F919F;
+  color:black;
 }

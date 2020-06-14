@@ -2,12 +2,12 @@
 
   <div class="menu-links">
 
-    <%= link_to root_path, class: 'btn btn-light text-dark' do %>
+    <%= link_to root_path, class: 'btn btn-light menu-icon' do %>
       <i class="fas fa-home"></i>
     <% end %>
 
     <% if current_user %>
-      <%= link_to user_path(current_user), class: 'btn btn-light text-dark' do %>
+      <%= link_to user_path(current_user), class: 'btn btn-light menu-icon' do %>
         <i class="fas fa-running"></i>
       <% end %>
     <% end %>
@@ -16,7 +16,7 @@
 
 
 
-    <%= link_to root_path, class: 'btn btn-light text-dark' do %>
+    <%= link_to root_path, class: 'btn btn-light menu-icon' do %>
       <i class='far fa-comments'></i>
     <% end %>
 
