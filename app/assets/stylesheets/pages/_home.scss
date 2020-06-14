@@ -55,7 +55,7 @@
 
 .turquoise-box {
   position: relative;
-  height: 600px;
+  height: auto;
   weight: 100%;
   background-color: $turquoise;
   z-index: 2;
@@ -73,10 +73,17 @@
   transform: skewY(-4deg);
 }
 
+.banner-info {
+  width: 50%;
+}
+
+.banner-transparent {
+  width: 50%
+}
 .washed-black-box {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: auto;
   background-color: $washed-black;
 }
 
@@ -88,7 +95,7 @@
   background: $turquoise;
   right: 50%;
   transform: skewY(20deg);
-  margin-top: -124px;
+  margin-top: -615px;
 }
 
 .washed-black-box:before {
@@ -117,16 +124,69 @@ p {
   color: white;
 }
 
-.grids {
-display: flex;
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-gap: 16px;
+.strava_phone {
+  margin-top: -184px;
+  height: 700px;
+  width: 328px;
+
 }
 
-@media (min-width: 576px) {
+.athlete {
+width: 500px;
+height: 491px;
+}
+
+@media (min-width: 720px) {
   .grids {
+    display: flex;
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
   }
 }
+
+@media (max-width: 540px) {
+  .banner h1 {
+    font-size: 35px;
+  }
+  .banner a {
+    font-size: 16px;
+  }
+  .strava_phone {
+    margin-top: 0px;
+    height: 500px;
+    width: 234px;
+  }
+  .athlete {
+    width: 300px;
+    height: 293px;
+    margin-top: 60px;
+  }
+  .banner .container {
+    margin: auto;
+  }
+  .banner-info {
+  width: 75%;
+  }
+
+  .banner-transparent {
+  width: 0%
+  }
+  .grid p {
+    padding: 0px 0px;
+  }
+
+  .turquoise-box:after {
+    margin-top: -44px;
+  }
+  .washed-black-box:after {
+    margin-top: -673px;
+  }
+}
+
+
+
+
+
+
 

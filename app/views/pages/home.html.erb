@@ -1,22 +1,22 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/b7ce3171686157.5bce12a240e68.jpg);">
   <div class="container d-flex">
-    <div class="col-6" style="text-align-last: left;">
+    <div class="banner-info" style="text-align-last: left;">
       <h1>Compete in</h1>
       <h1>Virtual Running</h1>
       <h1>Challenges</h1>
       <div class="space-between col-12"></div>
       <a class="btn btn-primary" href="#" style="border: none;">Join a Race</a>
     </div>
-    <div class="col-6"></div>
+    <div class="banner-transparent"></div>
   </div>
 </div>
 <div>
   <div class='turquoise-box'>
     <div class="grids">
-      <div class="grid">
+      <div class="grid col-xs-12">
         <h2>Never run alone again</h2>
-        <p>We connect you for every virtual challenge with competitors all around the world. Add you runner friends to any upcoming event and be part of our growing community.</p>
+        <p style="padding-left: 60px;">We connect you for every virtual challenge with competitors all around the world. Add you runner friends to any upcoming event and be part of our growing community.</p>
       </div>
       <div class="grid">
         <%= image_tag "app_photo.png", alt: "App", width: 200, class: "strava_phone" %>
@@ -24,13 +24,14 @@
   </div>
     </div>
   <div class="washed-black-box">
-    <div class="grids">
+    <div class="grids col-xs-12">
       <div class="grid">
-        <%= image_tag "runner_girl.png", alt: "App", width: 400 %>
+        <%= image_tag "runner_girl.png", alt: "App", width: 400, class: "athlete" %>
       </div>
       <div class="grid">
          <h2>Global rankings, personalized stats</h2>
-        <p>We are commited to your progress. We help you track your stats so that with every event you reach your goals and celebrate your success</p>
+        <p style="padding-right: 60px">We are commited to your progress. We help you track your stats so that with every event you reach your goals and celebrate your success</p>
+        <a class="btn btn-primary" href="#" style="border: none;">Get Started</a>
       </div>
     </div>
   </div>
