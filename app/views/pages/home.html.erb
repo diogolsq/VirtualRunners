@@ -7,7 +7,11 @@
       <h1>Virtual Running</h1>
       <h1>Challenges</h1>
       <div class="space-between col-12"></div>
-      <a class="btn btn-primary" href="/users/sign-up" style="border: none;">Join a Race</a>
+
+      <%= link_to tracks_path do %>
+        <p class="btn btn-primary"  style="border: none;">Join a Race</p>
+      <% end %>
+
     </div>
     <div class="banner-transparent"></div>
   </div>
@@ -32,7 +36,11 @@
       <div class="grid">
          <h2 class="h2-box">Global rankings, personalized stats</h2>
         <p class="p-black-box">We are commited to your progress. We help you track your stats so that with every event you reach your goals and celebrate your success</p>
-        <a class="get-started btn btn-primary" href="/users/sign-up" style="border: none;">Get Started</a>
+
+        <%= link_to tracks_path do %>
+          <p class="get-started btn btn-primary" style="border: none;">Get Started</p>
+        <% end %>
+
       </div>
     </div>
   </div>

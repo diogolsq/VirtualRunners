@@ -1,7 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
   <%= link_to root_path, class: "navbar-brand" do %>
-    <h1 class='navbar-logo-title'>Virtual Runners</h1>
     <%= image_tag "logo.png", crop: :fill %>
     <% end %>
 
@@ -20,7 +19,7 @@
           </li>
         </ul>
       <% else %>
-  
+
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link-login" %>
         </li>
