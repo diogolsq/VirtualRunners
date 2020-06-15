@@ -1,64 +1,57 @@
-.profile-container{
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-padding: 1%;
-}
+.profile-page{
 
-.profile-item{
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  text-align: center;
-}
-
-.profile-item a {
-  margin-top: 1em;
-}
-
-.show-img-name {
-  display:flex;
-  padding:4px;
-  width:100%;
-  flex-direction:column;
-  align-items:center;
-  box-shadow:2px 2px 3px rgba(0,0,0,0.4);
-  border-radius:8px;
-  background-color:#48A2D6;
-}
-
-.show-img-name img {
-  border-radius: 50%;
-  width:160%;
-}
-
-.show-info{
-  display:inline-grid;
-  padding:4px;
-  flex-direction:column;
-  width:400%;
-  box-shadow:2px 2px 3px rgba(0,0,0,0.4);
-    box-sizing: border-box;
-  border: 1px solid black;
-  margin-left: 45%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 
-.cardheader {
-    background: url("https://source.unsplash.com/featured/?{run}");
-    background-size: cover;
-    height: 210px;
+.profile-info{
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin: 5%;
+
+
+}
+
+.profile-small-info{
+text-align: center;
+}
+
+.profile-avatar{
+  position: relative;
+  margin-bottom: 15vw;
+
+  img{
+    width: 25vw;
+    position: absolute;
+    top: -12.5vw;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+
 }
 
 
-.profile-pic {
-    width: 60%;
-    height: 60%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+.profile-botton-part{
+  display: flex;
+  justify-content: space-around;
 }
 
-.hovercard h1{
-    font-size: x-large;
-    padding: 20px;
-    margin-top: 10px;
+
+
+.profile-races-cards{
+
+  display: inline-block;
 }
+
+
+.hovercard h1,h2,p,a {
+    font-size: 12px;
+    color: black;
+}
+
+
