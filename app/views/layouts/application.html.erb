@@ -19,9 +19,17 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <div class="style4all-fixing-margin">
+    <% if request.fullpath == root_path %>
+
       <%= yield %>
-    </div>
+
+    <% else %>
+
+      <div class="style4all-fixing-margin" >
+        <%= yield %>
+      </div>
+
+    <% end %>
 
     <%= render 'shared/menu' unless request.fullpath == root_path %>
 
