@@ -3,6 +3,8 @@ class TracksController < ApplicationController
 
   def index
     @tracks = Track.all
+    @tracks = @tracks.sort_by(&:date)
+
     if params[:search]
       if params[:search][:query]
         @tracksresult = Track.find_by(name: params[:search][:query])
