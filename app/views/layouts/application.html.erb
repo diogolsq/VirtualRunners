@@ -22,7 +22,7 @@
       <%= yield %>
     </div>
 
-    <%= render 'shared/menu' %>
+    <%= render 'shared/menu' unless request.fullpath == root_path %>
 
   </body>
 </html>
