@@ -109,6 +109,14 @@
   margin-top: -124px;
 }
 
+.p-turquoise-box {
+  padding-left: 60px;
+}
+
+.p-black-box {
+  padding-right: 60px;
+}
+
 .grid {
   align-items: center;
   justify-content: space-around;
@@ -131,6 +139,10 @@ p {
 
 }
 
+.get-started {
+  background-color: $turquoise;
+  margin-bottom: 30px;
+}
 .athlete {
 width: 500px;
 height: 491px;
@@ -144,6 +156,8 @@ height: 491px;
     grid-gap: 16px;
   }
 }
+
+
 
 @media (max-width: 540px) {
   .banner h1 {
@@ -172,15 +186,21 @@ height: 491px;
   .banner-transparent {
   width: 0%
   }
-  .grid p {
-    padding: 0px 0px;
-  }
 
   .turquoise-box:after {
     margin-top: -44px;
   }
   .washed-black-box:after {
-    margin-top: -673px;
+    margin-top: -739px;
+  }
+
+  .p-turquoise-box {
+
+  padding: 0px 25px;
+  }
+
+  .p-black-box {
+  padding: 0px 25px;
   }
 }
 
