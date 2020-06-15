@@ -1,4 +1,25 @@
-.profile-photo{
+.profile-page{
+
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+.profile-info{
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin: 5%;
+
+
+}
+
+.profile-small-info{
+text-align: center;
+}
+
+.profile-avatar{
   position: relative;
   margin-bottom: 15vw;
 
@@ -15,9 +36,22 @@
 }
 
 
-.hovercard h1,h2{
-    font-size: x-large;
-    padding: 20px;
-    margin-top: 10px;
+.profile-botton-part{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+.profile-races-cards{
+
+  display: inline-block;
+}
+
+
+.hovercard h1,h2,p,a {
+    font-size: 12px;
     color: black;
 }
+
+
