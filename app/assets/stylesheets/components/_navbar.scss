@@ -1,5 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background-color: $turquoise;
 
 }
 
@@ -8,29 +11,19 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 70px;
+  width: 40px;
 }
 
 h1 {
   text-align: center;
 }
 
-.navbar-logo-title{
-  color:#1F919F;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
-  font-family: 'Odibee Sans', cursive;
-  font-size:40px;
+
+.navbar-nav .nav-link {
+  color: white;
+  font-family: $other-titles;
 }
 
-.navbar-brand{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.navbar{
-}
-
-.navbar-list{
-  list-style-type: none;
+.nav-link-login {
+  color: white;
 }

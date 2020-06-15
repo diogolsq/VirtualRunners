@@ -20,11 +20,10 @@
           </li>
         </ul>
       <% else %>
-        <ul class='navbar-list'>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        </ul>
+  
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link-login" %>
+        </li>
       <% end %>
 </div>
 

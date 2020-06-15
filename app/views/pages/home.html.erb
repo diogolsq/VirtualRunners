@@ -1,56 +1,39 @@
-  <div class="cards">
-    <% if @tracks %>
-      <% @tracks.each do |track| %>
-        <%= link_to track_path(track) do %>
-
-          <% if track.photo.attached? %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('<%= cl_image_path track.photo.key %>')">
-              <div class="card-text">
-                <%= track.name %>
-                <div class="card-info">
-                 <div class="card-info-box">
-                   <i class="fas fa-running"></i> <%= track.distance %> km
-                 </div>
-                 <div class="card-info-box">
-                   <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
-                 </div>
-                </div>
-              </div>
-            </div>
-          <% else %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{run})">
-              <div class="card-text">
-                <%= track.name %>
-                <div class="card-info">
-                  <div class="card-info-box">
-                    <i class="fas fa-running"></i> <%= track.distance %> km
-                  </div>
-                  <div class="card-info-box">
-                    <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
-                  </div>
-                </div>
 
 
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
-  <br>
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-    <div class="search-form-control form-group" id='search-bar'>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find the perfect race for you"
-    %>
-    <%#= submit_tag "Search", class: "btn btn-primary" %>
-    <button name="button" type="submit" class="btn btn-primary form-button">
-      <i class="fas fa-search"></i> Search
-    </button>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/b7ce3171686157.5bce12a240e68.jpg);">
+  <div class="container d-flex">
+    <div class="banner-info" style="text-align-last: left;">
+      <h1>Compete in</h1>
+      <h1>Virtual Running</h1>
+      <h1>Challenges</h1>
+      <div class="space-between col-12"></div>
+      <a class="btn btn-primary" href="/users/sign-up" style="border: none;">Join a Race</a>
     </div>
-  <% end %>
-
+    <div class="banner-transparent"></div>
+  </div>
+</div>
+<div>
+  <div class='turquoise-box'>
+    <div class="grids">
+      <div class="grid col-xs-12">
+        <h2 class="h2-box">Never run alone again</h2>
+        <p class="p-turquoise-box">We connect you for every virtual challenge with competitors all around the world. Add you runner friends to any upcoming event and be part of our growing community.</p>
+      </div>
+      <div class="grid">
+        <%= image_tag "app_photo.png", alt: "App", width: 200, class: "strava_phone" %>
+      </div>
+  </div>
+    </div>
+  <div class="washed-black-box">
+    <div class="grids col-xs-12">
+      <div class="grid">
+        <%= image_tag "runner_girl.png", alt: "App", width: 400, class: "athlete" %>
+      </div>
+      <div class="grid">
+         <h2 class="h2-box">Global rankings, personalized stats</h2>
+        <p class="p-black-box">We are commited to your progress. We help you track your stats so that with every event you reach your goals and celebrate your success</p>
+        <a class="get-started btn btn-primary" href="/users/sign-up" style="border: none;">Get Started</a>
+      </div>
+    </div>
+  </div>
+</div>
