@@ -39,7 +39,9 @@
 
 <h1><%= @track.name %></h1>
 <div id='trackdata' data-date=<%= @date.to_s %>></div>
-<div id="flipdown" class="flipdown"></div>
+<div class="flipdown-centralize">
+  <div id="flipdown" class="flipdown"></div>
+</div>
 
 
 <% if @race.present? %>
