@@ -1,45 +1,64 @@
-.show{
-padding:16px;
+.profile-container{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+padding: 1%;
 }
 
-.show h1 {
-font-size:25px ;
+.profile-item{
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  text-align: center;
 }
 
-.show p {
-font-size: 15px;
+.profile-item a {
+  margin-top: 1em;
 }
-
 
 .show-img-name {
   display:flex;
-
+  padding:4px;
+  width:100%;
   flex-direction:column;
   align-items:center;
   box-shadow:2px 2px 3px rgba(0,0,0,0.4);
+  border-radius:8px;
+  background-color:#48A2D6;
 }
 
 .show-img-name img {
   border-radius: 50%;
-  height:240px;
-  width:200px;
-}
-
-.show-top{
-  display:flex;
-  justify-content:space-around;
-
+  width:160%;
 }
 
 .show-info{
-  display:flex;
+  display:inline-grid;
+  padding:4px;
   flex-direction:column;
-  width:400px;
+  width:400%;
   box-shadow:2px 2px 3px rgba(0,0,0,0.4);
+    box-sizing: border-box;
+  border: 1px solid black;
+  margin-left: 45%;
 }
 
-.show-scheduled-races {
-  display:flex;
-  flex-direction:column;
 
+.cardheader {
+    background: url("https://source.unsplash.com/featured/?{run}");
+    background-size: cover;
+    height: 210px;
+}
+
+
+.profile-pic {
+    width: 60%;
+    height: 60%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.hovercard h1{
+    font-size: x-large;
+    padding: 20px;
+    margin-top: 10px;
 }

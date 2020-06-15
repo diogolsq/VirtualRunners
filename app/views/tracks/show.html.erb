@@ -32,27 +32,33 @@
 <h1><%= @track.name %></h1>
 
 
-
-
 <% if @race.present? %>
 
 
   <% if @race.strava_activity_id.present? %>
 
-    <button class="btn btn-light" disabled>Go to strava and start running</button> %>
-    <%= link_to "Finished Running", track_path(@track),class: "btn btn-primary"  %>
+    <div class="d-flex justify-content-around">
+      <button class="btn btn-secondary" disabled>Go to strava and start running</button>
+      <%= link_to "Finished Running", track_path(@track),class: "btn btn-primary"  %>
+    </div>
 
-    <h2>Your stats</h2>
-    <% if @race.status == "finished" %>
-    <%= "time:#{@race.elapsed_time} #{@race.start_lat_lng} #{@race.end_lat_lng} avg: #{@race.average_speed} max: #{@race.max_speed}" %>
-    <% elsif @race.status == "ongoing" %>
-      <p>ongoing</p>
-    <% end %>
+    <div class="container">
+      <div class="d-flex">
+        <h2>Your stats</h2>
+        <% if @race.status == "finished" %>
+          <%= "time:#{@race.elapsed_time} #{@race.start_lat_lng} #{@race.end_lat_lng} avg: #{@race.average_speed} max: #{@race.max_speed}" %>
+        <% elsif @race.status == "ongoing" %>
+          <p>ongoing</p>
+        <% end %>
+      </div>
 
-    <h2>Everyone stats</h2>
-    <% @finished_races.each do |race| %>
-      <p><%= race.elapsed_time %></p>
-    <% end %>
+      <div class="d-flex">
+        <h2>Everyone's Stats</h2>
+        <% @finished_races.each do |race| %>
+          <p><%= race.elapsed_time %></p>
+        <% end %>
+      </div>
+    </div>
 
 
 
@@ -63,10 +69,6 @@
   <% end %>
 
 <% else  %>
-
-  <%= simple_form_for [@track, Race.new]  do |f| %>
-    <%= f.submit "Join Race", class: "btn btn-primary" %>
-  <% end %>
 
 <% end %>
 
@@ -95,7 +97,7 @@ type="text/css"
   <% if @racewithuser.empty?  %>
     <div>
       <%= link_to track_races_path(@track), method: :POST, remote: true do %>
-        <p class='btn btn-danger'> Join this Race</p>
+        <p class='btn btn-danger' id='sweet-alert-join'> Join this Race</p>
       <% end %>
     </div>
   <% else %>
@@ -105,6 +107,7 @@ type="text/css"
       <% end %>
     </div>
   <% end %>
+
 
 
 

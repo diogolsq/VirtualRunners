@@ -12,20 +12,33 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 20px;
+  text-decoration:none !important;
 }
 
-.card-text{
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+.card-text {
+  text-shadow: 1px 1px 3px rgba(0,0,0,1);
   text-align: center;
   align-self: flex-end;
   padding-bottom: 20px;
-
 }
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+}
+
+
+.card-info{
+  display:flex;
+  flex-direction:column;
+  text-shadow:2px 2px 3px rgba(0,0,0,0.3);
+  font-size:15px;
+
+}
+
+.card-info-box {
+  text-shadow:2px 2px 3px rgba(0,0,0,1);
 }
 
 // Smallest device
@@ -62,3 +75,5 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+

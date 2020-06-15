@@ -1,42 +1,56 @@
-<h1 id='home-title-header' class='top'>Virtual Runners</h1>
+<div class="cards">
+  <% if @tracks %>
+    <% @tracks.each do |track| %>
+      <%= link_to track_path(track) do %>
 
-
-  <div class="cards">
-    <% if @tracks %>
-      <% @tracks.each do |track| %>
-        <%= link_to track_path(track) do %>
-
-          <% if track.photo.attached? %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('<%= cl_image_path track.photo.key %>')">
-              <div class="card-text">
-                <%= track.name %>
+        <% if track.photo.attached? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('<%= cl_image_path track.photo.key %>')">
+            <div class="card-text">
+              <%= track.name %>
+              <div class="card-info">
+               <div class="card-info-box">
+                 <i class="fas fa-running"></i> <%= track.distance %> km
+               </div>
+               <div class="card-info-box">
+                 <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
+               </div>
               </div>
             </div>
-          <% else %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{run})">
-              <div class="card-text">
-                <%= track.name %>
+          </div>
+        <% else %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{run})">
+            <div class="card-text">
+              <%= track.name %>
+              <div class="card-info">
+                <div class="card-info-box">
+                  <i class="fas fa-running"></i> <%= track.distance %> km
+                </div>
+                <div class="card-info-box">
+                  <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
+                </div>
               </div>
+
+
             </div>
-          <% end %>
+          </div>
         <% end %>
       <% end %>
     <% end %>
-  </div>
-  <br>
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-    <div class="search-form-control form-group" id='search-bar'>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find the perfect race for you"
-    %>
-    <%#= submit_tag "Search", class: "btn btn-primary" %>
-    <button name="button" type="submit" class="btn btn-primary form-button">
-      <i class="fas fa-search"></i> Search
-    </button>
-
-    </div>
   <% end %>
+</div>
+<br>
+<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <div class="search-form-control form-group" id='search-bar'>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find the perfect race for you"
+  %>
+  <%#= submit_tag "Search", class: "btn btn-primary" %>
+  <button name="button" type="submit" class="btn btn-primary form-button">
+    <i class="fas fa-search"></i> Search
+  </button>
 
+  </div>
+<% end %>
 

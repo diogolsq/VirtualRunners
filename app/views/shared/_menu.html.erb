@@ -2,23 +2,45 @@
 
   <div class="menu-links">
 
-    <%= link_to root_path, class: 'btn btn-primary text-light' do %>
-      <i class="fas fa-home"></i>
-    <% end %>
 
-    <% if current_user %>
-      <%= link_to user_path(current_user), class: 'btn btn-primary text-light' do %>
-        <i class="fas fa-running"></i>
+
+    <% if request.fullpath == tracks_path %>
+
+      <%= link_to tracks_path, class: 'btn btn-secondary  menu-icon' do %>
+        <i class="fas fa-home"></i>
+      <% end %>
+    <% else %>
+      <%= link_to tracks_path, class: 'btn btn-light menu-icon' do %>
+        <i class="fas fa-home"></i>
       <% end %>
     <% end %>
 
 
 
 
-
-    <%= link_to root_path, class: 'btn btn-primary text-light' do %>
-      <i class='far fa-comments'></i>
+    <% if current_user %>
+      <% if request.fullpath == user_path(current_user) %>
+        <%= link_to user_path(current_user), class: 'btn btn-secondary  menu-icon'   do %>
+          <i class="fas fa-running"></i>
+        <% end %>
+      <% else %>
+        <%= link_to user_path(current_user), class: 'btn btn-light menu-icon'   do %>
+          <i class="fas fa-running"></i>
+        <% end %>
+      <% end %>
     <% end %>
+
+
+
+  <% if request.fullpath == new_track_path %>
+    <%= link_to new_track_path, class: 'btn btn-secondary menu-icon' do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    <% end %>
+  <% else %>
+    <%= link_to new_track_path, class: 'btn btn-light menu-icon' do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    <% end %>
+  <% end %>
 
   </div>
 </div>
