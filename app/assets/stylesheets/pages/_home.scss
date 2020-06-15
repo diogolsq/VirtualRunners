@@ -159,6 +159,17 @@ height: 491px;
     grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
   }
+
+    .banner .container {
+    margin: auto;
+  }
+  .banner-info {
+  width: 75%;
+  }
+
+  .banner-transparent {
+  width: 0%
+  }
 }
 
 
