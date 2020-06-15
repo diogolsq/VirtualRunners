@@ -148,6 +148,10 @@ width: 500px;
 height: 491px;
 }
 
+.h2-box {
+  font-size: 3rem;
+}
+
 @media (min-width: 720px) {
   .grids {
     display: flex;
@@ -201,6 +205,10 @@ height: 491px;
 
   .p-black-box {
   padding: 0px 25px;
+  }
+
+  .h2-box {
+  font-size: 2rem;
   }
 }
 
