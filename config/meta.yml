@@ -1,5 +1,5 @@
-meta_product_name: "Virtual Runners"
-meta_title: "Running Separeted but to together"
+meta_product_name:  "Running Separeted but to together"
+meta_title: "Virtual Runners"
 meta_description: "Using technology to run together but at a distance"
 meta_image: "runner_girl.png" # should exist in `app/assets/images/`
 twitter_account: "@@VirtualRunners1"   # required for Twitter Cards
