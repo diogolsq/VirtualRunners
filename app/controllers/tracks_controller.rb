@@ -24,6 +24,7 @@ class TracksController < ApplicationController
     @finished_races = Race.where(status: "finished")
     @users = []
     @race = @track.races.find_by(user: current_user)
+    @date = DateTime.new(@track.date.year, @track.date.month, @track.date.day, @track.time_to_start.hour, @track.time_to_start.min, @track.time_to_start.sec)
     @races.each do |race|
       user = User.find(race.user_id)
       @users << user

@@ -1,3 +1,14 @@
+<!-- JS links for flipdownd -->
+
+<script type="text/javascript" src="js/flipdown/flipdown.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+
+
+
+
+
+
 <div class="container-track-show col-12">
   <%# case 1 before joining race  %>
   <% if !@race.present? %>
@@ -10,9 +21,7 @@
         <p>Description</p>
         <p><%=@track.description%></p>
         <%# join race button %>
-        <%= simple_form_for [@track, Race.new]  do |f| %>
-          <%= f.submit "Join Race", class: "btn btn-primary" %>
-        <% end %>
+
       </div>
 
       <div class="map-container">
@@ -28,8 +37,9 @@
 
 
 
-
 <h1><%= @track.name %></h1>
+<div id='trackdata' data-date=<%= @date.to_s %>></div>
+<div id="flipdown" class="flipdown"></div>
 
 
 <% if @race.present? %>
