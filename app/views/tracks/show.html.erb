@@ -10,9 +10,7 @@
         <p>Description</p>
         <p><%=@track.description%></p>
         <%# join race button %>
-        <%= simple_form_for [@track, Race.new]  do |f| %>
-          <%= f.submit "Join Race", class: "btn btn-primary" %>
-        <% end %>
+
       </div>
 
       <div class="map-container">
