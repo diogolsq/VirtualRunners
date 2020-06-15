@@ -1,3 +1,10 @@
+.flipdown-centralize {
+  display:flex;
+  justify-content:center;
+}
+
+
+
 /* THEMES */
 
 /********** Theme: dark **********/
@@ -72,6 +79,7 @@
   overflow: visible;
   width: 510px;
   height: 110px;
+
 }
 
 .flipdown .rotor-group {
