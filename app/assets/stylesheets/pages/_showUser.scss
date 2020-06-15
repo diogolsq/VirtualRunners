@@ -1,19 +1,18 @@
 .profile-container{
 display: grid;
 grid-template-columns: repeat(2, 1fr);
-grid-column-gap: 50px;
-padding: 10px;
-align-item: center;
+padding: 1%;
 }
 
 .profile-item{
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   text-align: center;
-  margin-left: 40px;
 }
 
-
+.profile-item a {
+  margin-top: 1em;
+}
 
 .show-img-name {
   display:flex;
@@ -31,12 +30,6 @@ align-item: center;
   width:160%;
 }
 
-.show-top{
-  display:flex;
-  justify-content:space-around;
-
-}
-
 .show-info{
   display:inline-grid;
   padding:4px;
@@ -49,15 +42,10 @@ align-item: center;
 }
 
 
-
-.card.hovercard {
-    margin-left: 20%;
-}
-
-.card.hovercard .cardheader {
+.cardheader {
     background: url("https://source.unsplash.com/featured/?{run}");
     background-size: cover;
-    height: 135px;
+    height: 210px;
 }
 
 
@@ -67,9 +55,7 @@ align-item: center;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    border: 5px solid rgba(255,255,255,0.5);
 }
-
 
 .hovercard h1{
     font-size: x-large;
