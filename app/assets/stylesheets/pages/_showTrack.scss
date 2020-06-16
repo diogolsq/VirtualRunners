@@ -50,3 +50,26 @@
   height: auto;
 }
 
+.runner-avatar {
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  align-self: center;
+
+@media (max-width: 540px) {
+.runners-avatar {
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
+  }
+}
+
+  @media (max-width: 540px) {
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+  }
+}
+
