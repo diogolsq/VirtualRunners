@@ -3,8 +3,8 @@
 
 
   <div class="profile-avatar">
-    <%= cl_image_tag @user.photo.key, crop: :fill, id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false if @user.photo.attached?%>
-    <%= image_tag "avatar-default-copy.png", crop: :fill, id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false unless @user.photo.attached?%>
+    <%= cl_image_tag @user.photo.key, crop: :fill, 'aria-haspopup': true, 'aria-expanded': false if @user.photo.attached?%>
+    <%= image_tag "avatar-default-copy.png", crop: :fill, 'aria-haspopup': true, 'aria-expanded': false unless @user.photo.attached?%>
   </div>
 
   <div class="profile-info">
