@@ -68,18 +68,20 @@ const fillingform = () => {
   });
  }
 
-document.querySelector("#new_track > input.btn.btn-primary").addEventListener('click', prevent => {
-  event.preventDefault();
+if (document.querySelector("#new_track > input.btn.btn-primary")){
+  document.querySelector("#new_track > input.btn.btn-primary").addEventListener('click', prevent => {
+    event.preventDefault();
 
-  document.querySelector("#mapbox-directions-origin-input > div > input[type=text]").click();
-  document.querySelector("#mapbox-directions-destination-input > div > input[type=text]").click();
-  document.querySelector("#mapbox-directions-origin-input > div > input[type=text]").click();
+    document.querySelector("#mapbox-directions-origin-input > div > input[type=text]").click();
+    document.querySelector("#mapbox-directions-destination-input > div > input[type=text]").click();
+    document.querySelector("#mapbox-directions-origin-input > div > input[type=text]").click();
 
-  console.log(event);
+    console.log(event);
 
-  document.querySelector("#new_track").submit();
+    document.querySelector("#new_track").submit();
+
 });
-
+};
 
 }
 
