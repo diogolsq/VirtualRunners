@@ -18,7 +18,7 @@
               <% if @user.races_number == nil %>
                 0
               <% else %>
-                <%=  @races.number %>
+                <%=  @user.races_number %>
               <% end %>
             </p>
           </div>
@@ -32,7 +32,7 @@
 
     <div class="personal-info">
         <div class="card-body">
-          <p>About me: <%= @user.Bio.capitalize %></p>
+          <p>About me: <%= @user.Bio.capitalize if @user.Bio %></p>
           <%= link_to edit_user_registration_path, class: "nav-link" do %>
           <i class="fas fa-user-edit"></i>
           <% end %>
