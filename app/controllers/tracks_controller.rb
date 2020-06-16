@@ -41,7 +41,7 @@ class TracksController < ApplicationController
       lng: @track.start_longitude,
       start_address: @track.start_address,
       infoWindow: render_to_string(partial: "info_window_start", locals: { track: @track }),
-      image_url: helpers.asset_url('start_line.png')
+      image_url: helpers.asset_url('empty.png')
     }]
 
     @marker_end = {
@@ -49,7 +49,7 @@ class TracksController < ApplicationController
       lng: @track.end_longitude,
       end_address: @track.end_address,
       infoWindow: render_to_string(partial: "info_window_end", locals: { track: @track }),
-      image_url: helpers.asset_url('end_line.png')
+      image_url: helpers.asset_url('empty.png')
     }
     @markers << @marker_end
 
