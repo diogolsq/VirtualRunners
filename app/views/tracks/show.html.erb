@@ -155,13 +155,13 @@
                           <th scope="row">1</th>
                           <%= link_to user_path(runner.user) do %>
                             <% if runner.user.photo.attached? %>
-                              <td><%= cl_image_tag runner.user.photo.key, class:'avatar'%><td>
+                              <td><%= cl_image_tag runner.user.photo.key, class:'avatar'%></td>
                             <% else %>
-                                  <td><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %><td>
+                              <td><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></td>
                             <% end %>
                           <% end %>
-                          <td><%= runner.user.name %><td>
-                          <td><%= runner.elapsed_time %><td>
+                          <td><%= runner.user.name %></td>
+                          <td><%= runner.elapsed_time %></td>
                           </tbody>
                           </table>
 
