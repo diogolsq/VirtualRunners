@@ -27,3 +27,26 @@
   border: none;
 }
 
+.background-container {
+  background-color: $turquoise;
+  height: auto;
+  margin-top: 35px;
+}
+
+.container-race-info {
+  background-color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.nav-tabs {
+  padding-bottom: 7px;
+}
+
+.tab-pane {
+  border-left: 1px solid #DEE2E6;
+  border-right: 1px solid #DEE2E6;
+  border-bottom: 1px solid #DEE2E6;
+  height: auto;
+}
+
