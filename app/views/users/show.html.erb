@@ -51,6 +51,7 @@
               <% track = Track.find(race.track_id) %>
               <%= link_to track_path(track) do%>
                 <%=  track.name %>
+                <br>
               <% end %>
             <% end %>
           </div>
@@ -70,6 +71,7 @@
                 <% track = Track.find(race.track_id) %>
                 <%= link_to track_path(track) do%>
                   <%=  track.name %>
+                  <br>
                 <% end %>
               <% end %>
             </div>
