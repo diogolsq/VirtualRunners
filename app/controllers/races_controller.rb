@@ -42,6 +42,7 @@ class RacesController < ApplicationController
         distance: (@race.track.distance * 1000) # in meters
       )
       @race.update(strava_activity_id: activity.id.to_s)
+      @race.update(status: "ongoing")
 
       redirect_to @race.track
   end
