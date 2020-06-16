@@ -26,6 +26,9 @@
               <p>Level: <%= @user.level %></p>
             </div>
       </div>
+        <div class="btn btn-primary">
+          <%= link_to "Create your own Race", new_track_path %>
+        </div>
   </div>
 
   <div class="profile-botton-part">
@@ -37,10 +40,6 @@
           <i class="fas fa-user-edit"></i>
           <% end %>
         </div>
-        <div class="btn btn-primary">
-          <%= link_to "Create your own Race", new_track_path %>
-        </div>
-    </div>
     <div class="profile-races-cards">
       <div class="past-races">
         <div class="card bg-light mb-3">
@@ -56,6 +55,7 @@
             <% end %>
           </div>
         </div>
+    </div>
       </div>
 
       <div class="profile-races">

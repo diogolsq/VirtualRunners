@@ -1,17 +1,22 @@
-.profile-page{
 
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.profile-page{
+  padding: 5%;
+  background-color: $gainsboro;
+  img {
+  border-radius: 5%;
+  }
 }
 
+.profile-page h1, a, p, h2 {
+  color: black;
+  font-size: 12px;
+}
 
 .profile-info{
-  justify-content: space-between;
-  align-items: flex-end;
+
   position: relative;
   margin: 5%;
-
+  text-align: center;
 
 }
 
@@ -26,36 +31,32 @@ text-align: center;
 
 
   img{
-    width: 25vw;
     height: 25vh;
     position: absolute;
-    top: -12.5vw;
+    top: -42.5vw;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    border-radius:50%;
   }
 
 }
 
 
 .profile-botton-part{
-  display: flex;
-  justify-content: space-around;
+  text-align: center;
 }
 
 
 
-.profile-races-cards{
 
-  display: inline-block;
+@media (min-width: 720px) {
+  .profile-page{
+   font-family: 18px;
+
+  }
+
+  .profile-avatar img {
+      top: -23vw;
+  }
 }
-
-
-.hovercard h1,h2,p,a {
-    font-size: 12px;
-    color: black;
-}
-
-
