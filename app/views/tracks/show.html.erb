@@ -138,7 +138,37 @@
             </li>
           </ul>
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                <% @leaderboard.each do |runner| %>
+
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col">Place</th>
+                            <th scope="col"></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Time</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <th scope="row">1</th>
+                          <%= link_to user_path(runner.user) do %>
+                            <% if runner.user.photo.attached? %>
+                              <td><%= cl_image_tag runner.user.photo.key, class:'avatar'%><td>
+                            <% else %>
+                                  <td><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %><td>
+                            <% end %>
+                          <% end %>
+                          <td><%= runner.user.name %><td>
+                          <td><%= runner.elapsed_time %><td>
+                          </tbody>
+                          </table>
+
+                <% end %>
+
+
+            </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
           </div>
