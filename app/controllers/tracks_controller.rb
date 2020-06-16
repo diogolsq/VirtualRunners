@@ -23,7 +23,8 @@ class TracksController < ApplicationController
   def show
     @track.number_of_racers = Race.where(track_id: @track.id).count
     @races = Race.where(track_id: @track.id)
-    @finished_races = Race.where(status: "finished")
+    @finished_races = Race.where(status: "finished", track_id: @track.id)
+    @ongoing_races = Race.where(status: "ongoing", track_id: @track.id)
     @users = []
     @race = @track.races.find_by(user: current_user)
     @date = DateTime.new(@track.date.year, @track.date.month, @track.date.day, @track.time_to_start.hour, @track.time_to_start.min, @track.time_to_start.sec)
@@ -34,6 +35,7 @@ class TracksController < ApplicationController
     @user = current_user
     @racewithuser = Race.where(user_id:@user.id, track_id:@track.id)
     @race = @racewithuser.first
+    @leaderboard = @track.races.where(status: "finished").order("elapsed_time ASC")
 
 
     @markers = [{

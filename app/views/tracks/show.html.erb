@@ -133,6 +133,119 @@
           <% end %>
         </div>
       </div>
+    </div>
+
+
+      <%# within case 2 scenario diferent dates %>
+      <% if @track.date == Date.today %>
+
+        <div class="background-container">
+          <div class='container-race-info'>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Instructions</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Runners</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="Instructions-tab">
+
+                <h2> Make sure you read this before your race! </h2>
+
+                <p> 1) Join the race you want to participate in
+                2) This will create a scheduled event for you. The countdown will start running.
+                3) If you are unable to assist the challenge please cancel before the race's date.
+                4) If you dont have the strava app on your running device please install. Here is a link:
+                5) On the day of the Race. Comeback to your event and start whenever you are ready with the start running button.
+                6) Go to strava and and press record.
+                7) On your marks, set go!! Start running (time will be counted from this time on!)
+                8) Make sure you complete the distance for the specific challenge before finishing your run.
+                9) Stop your run in strava  (race time will end from this point!)
+                10) Feel free to name your acticity as you wish to.
+                11) Come back to this page and hit the finished race button.
+                12) Check out your results and ranking!</p>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="Runners-tab">
+
+                <div class="active-runners">
+                  <% @ongoing_races.each do |race| %>
+                  `<%= link_to user_path(race.user) do %>
+                      <% if race.user.photo.attached? %>
+                            <div class="runner-avatar"><%= cl_image_tag race.user.photo.key, class:'avatar'%></div>
+                      <% else %>
+                            <div class="runner-avatar"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+
+                  <div class="signed-up-runners"
+                    <div class="runners-avatar">
+                      <% @users.each do |user| %>
+                        <%= link_to user_path(user) do %>
+                          <% if user.photo.attached? %>
+                                <div class="runner-avatar"><%= cl_image_tag user.photo.key, class:'avatar'%></div>
+                          <% else %>
+                                <div class="runner-avatar"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
+                          <% end %>
+                        <% end %>
+                      <%end %>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+      <% else %>
+        <div class="background-container">
+        <div class='container-race-info'>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Instructions</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Runners</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="Instructions-tab">
+
+              <h2> Make sure you read this before your race! </h2>
+
+              <p> 1) Join the race you want to participate in
+              2) This will create a scheduled event for you. The countdown will start running.
+              3) If you are unable to assist the challenge please cancel before the race's date.
+              4) If you dont have the strava app on your running device please install. Here is a link:
+              5) On the day of the Race. Comeback to your event and start whenever you are ready with the start running button.
+              6) Go to strava and and press record.
+              7) On your marks, set go!! Start running (time will be counted from this time on!)
+              8) Make sure you complete the distance for the specific challenge before finishing your run.
+              9) Stop your run in strava  (race time will end from this point!)
+              10) Feel free to name your acticity as you wish to.
+              11) Come back to this page and hit the finished race button.
+              12) Check out your results and ranking!</p>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="Runners-tab">
+
+                  <div class="runners-avatar">
+                    <% @users.each do |user| %>
+                      <%= link_to user_path(user) do %>
+                        <% if user.photo.attached? %>
+                              <div class="runner-avatar"><%= cl_image_tag user.photo.key, class:'avatar'%></div>
+                        <% else %>
+                              <div class="runner-avatar"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
+                        <% end %>
+                      <% end %>
+                    <%end %>
+                  </div>
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+
 
     <% end %>
 
@@ -183,7 +296,7 @@
   <% elsif @track.date == Date.today %>
     <%= link_to "Start Running", start_running_race_path(@race), method: "post", class: "btn btn-primary" %>
   <% else %>
-    <button class="btn btn-primary" disabled>Not the time yet</button>
+
   <% end %>
 
 <% else  %>
@@ -219,9 +332,7 @@ type="text/css"
     </div>
   <% else %>
     <div>
-      <%= link_to track_race_path(@track, @race), method: :DELETE, remote: true do %>
-        <p class='btn btn-danger'> Cancel </p>
-      <% end %>
+
     </div>
   <% end %>
 
