@@ -3,13 +3,24 @@
   flex-direction:column;
   align-items:center;
   justify-content:center;
-   border: 1px solid;
+  border: 1px solid;
   box-shadow: 5px 5px #888888;
   border-radius: 10px;
 }
 
+
+.centralize-form-information{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+
+
 .centralize-form h2{
   margin-top: 2%;
+
 }
 
 .form-centralize {
