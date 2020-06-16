@@ -32,6 +32,9 @@ gem "omniauth-strava"
 # Gemfile
 gem 'pundit'
 
+# gem for graphs chartkick
+gem "chartkick"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

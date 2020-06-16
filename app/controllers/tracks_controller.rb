@@ -23,7 +23,7 @@ class TracksController < ApplicationController
   def show
     @track.number_of_racers = Race.where(track_id: @track.id).count
     @races = Race.where(track_id: @track.id)
-    @finished_races = Race.where(status: "finished")
+    @finished_races = Race.where(status: "finished", track_id: @track.id)
     @users = []
     @race = @track.races.find_by(user: current_user)
     @date = DateTime.new(@track.date.year, @track.date.month, @track.date.day, @track.time_to_start.hour, @track.time_to_start.min, @track.time_to_start.sec)
@@ -34,6 +34,7 @@ class TracksController < ApplicationController
     @user = current_user
     @racewithuser = Race.where(user_id:@user.id, track_id:@track.id)
     @race = @racewithuser.first
+    @leaderboard = @track.races.where(status: "finished").order("elapsed_time ASC")
 
 
     @markers = [{
@@ -53,36 +54,39 @@ class TracksController < ApplicationController
     }
     @markers << @marker_end
 
+    # retrieving individual api race results
     if @race.present?
+      if @race.status == "ongoing"
+        @race = @track.races.find_by(user: current_user)
+        client = Strava::Api::Client.new(
+            access_token: current_user.token
+        )
 
-          @race = @track.races.find_by(user: current_user)
-          client = Strava::Api::Client.new(
-              access_token: current_user.token
-          )
+        activities = client.athlete_activities
+        activity = activities.first
+        pactivity = activities[1]
 
-          activities = client.athlete_activities
-          activity = activities.first
-          pactivity = activities[1]
-
-          if pactivity
-            if pactivity.id.to_s == @race.strava_activity_id
-              @race.strava_activity_id = activity.id.to_s
-              @race.distance = activity.distance
-              @race.elapsed_time = activity.elapsed_time
-              @race.start_lat_lng = activity.start_latlng
-              @race.end_lat_lng = activity.end_latlng
-              @race.average_speed = activity.average_speed
-              @race.max_speed = activity.max_speed
-              if activity.distance >= pactivity.distance
-                @race.status = "finished"
-              else
-                @race.status = "ongoing"
-              end
+        if pactivity
+          if pactivity.id.to_s == @race.strava_activity_id
+            @race.strava_activity_id = activity.id.to_s
+            @race.distance = activity.distance
+            @race.elapsed_time = activity.elapsed_time
+            @race.start_lat_lng = activity.start_latlng
+            @race.end_lat_lng = activity.end_latlng
+            @race.average_speed = activity.average_speed
+            @race.max_speed = activity.max_speed
+            if activity.distance >= pactivity.distance
+              @race.status = "finished"
+            else
+              @race.status = "ongoing"
             end
+            @race.save
           end
-          return true
+        end
     end
 
+    end
+    @ongoing_races = Race.where(status: "ongoing", track_id: @track.id)
     @race = @track.races.find_by(user: current_user)
   end
 
@@ -124,7 +128,7 @@ class TracksController < ApplicationController
   private
 
   def find_user_race
-    @race = current_user.races.find(params[:id])
+    @race = @track.races.find_by(user: current_user)
     client = Strava::Api::Client.new(
         access_token: current_user.token
     )
@@ -133,22 +137,22 @@ class TracksController < ApplicationController
     activity = activities.first
     pactivity = activities[1]
 
-    if pactivity.id.to_s == @race.id
-      @race.strava_activity_id = activity.strava_activity_id.to_s
-      @race.distance = activity.distance
-      @race.elapsed_time = activity.elapsed_time
-      @race.start_lat_lng = activity.start_latlng
-      @race.end_lat_lng = activity.end_latlng
-      @race.average_speed = activity.average_speed
-      @race.max_speed = activity.max_speed
-      if activity.distance >= pactivity.distance
-        @race.status = "finished"
-      else
-        @race.status = "ongoing"
+    if pactivity
+      if pactivity.id.to_s == @race.strava_activity_id
+        @race.strava_activity_id = activity.id.to_s
+        @race.distance = activity.distance
+        @race.elapsed_time = activity.elapsed_time
+        @race.start_lat_lng = activity.start_latlng
+        @race.end_lat_lng = activity.end_latlng
+        @race.average_speed = activity.average_speed
+        @race.max_speed = activity.max_speed
+        if activity.distance >= pactivity.distance
+          @race.status = "finished"
+        else
+          @race.status = "ongoing"
+        end
       end
     end
-    @race.save
-    return true
   end
 
   def find_tracks

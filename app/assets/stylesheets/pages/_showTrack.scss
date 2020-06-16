@@ -1,0 +1,81 @@
+.container-track-show {
+  margin-top: 30px;
+}
+
+.ranking-item {
+  align-items: center;
+}
+
+.track-details {
+  border: solid;
+  border-color: #f6f6f6;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  padding: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.track-descrption h1 {
+  color: $turquoise;
+}
+
+.track-descrption h3 {
+  font-size: 16px;
+}
+
+.track-descrption p {
+  font-size: 12px;
+}
+
+#sweet-alert-join {
+  background-color: $turquoise;
+  border: none;
+}
+
+.background-container {
+  background-color: $turquoise;
+  height: auto;
+  margin-top: 35px;
+}
+
+.container-race-info {
+  background-color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.nav-tabs {
+  padding-bottom: 7px;
+}
+
+.tab-pane {
+  border-left: 1px solid #DEE2E6;
+  border-right: 1px solid #DEE2E6;
+  border-bottom: 1px solid #DEE2E6;
+  height: auto;
+}
+
+.runner-avatar {
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  align-self: center;
+
+@media (max-width: 540px) {
+.runners-avatar {
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
+  }
+}
+
+  @media (max-width: 540px) {
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+  }
+}
+
