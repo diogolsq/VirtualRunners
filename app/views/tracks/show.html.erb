@@ -59,7 +59,7 @@
 
             <h2> Make sure you read this before your race! </h2>
 
-            <p> 1) Join the race you want to participate in
+            <p> 1) Join the race you want to participate in.
             2) This will create a scheduled event for you. The countdown will start running.
             3) If you are unable to assist the challenge please cancel before the race's date.
             4) If you dont have the strava app on your running device please install. Here is a link:
@@ -205,6 +205,7 @@
       </div>
 
     <% else %>
+
       <div class="track-details d-flex">
         <div class="map-container col-6">
           <div class="map-with-button">
@@ -373,10 +374,14 @@
     <% end %>
   <% end %>
 
+
+
+
+<%= bar_chart @track.races.where(status: 'finished').order('elapsed_time ASC').map(&:elapsed_time) %>
+
 </div>
 
 
-        <%# bar_chart Race.group(:size).sum(:price) %>
 
 
 
