@@ -24,7 +24,6 @@ class TracksController < ApplicationController
     @track.number_of_racers = Race.where(track_id: @track.id).count
     @races = Race.where(track_id: @track.id)
     @finished_races = Race.where(status: "finished", track_id: @track.id)
-    @ongoing_races = Race.where(status: "ongoing", track_id: @track.id)
     @users = []
     @race = @track.races.find_by(user: current_user)
     @date = DateTime.new(@track.date.year, @track.date.month, @track.date.day, @track.time_to_start.hour, @track.time_to_start.min, @track.time_to_start.sec)
@@ -56,8 +55,35 @@ class TracksController < ApplicationController
     @markers << @marker_end
 
     # retrieving individual api race results
-    find_user_race if @race.present?
+    if @race.status == "ongoing"
+      @race = @track.races.find_by(user: current_user)
+      client = Strava::Api::Client.new(
+          access_token: current_user.token
+      )
 
+      activities = client.athlete_activities
+      activity = activities.first
+      pactivity = activities[1]
+
+      if pactivity
+        if pactivity.id.to_s == @race.strava_activity_id
+          @race.strava_activity_id = activity.id.to_s
+          @race.distance = activity.distance
+          @race.elapsed_time = activity.elapsed_time
+          @race.start_lat_lng = activity.start_latlng
+          @race.end_lat_lng = activity.end_latlng
+          @race.average_speed = activity.average_speed
+          @race.max_speed = activity.max_speed
+          if activity.distance >= pactivity.distance
+            @race.status = "finished"
+          else
+            @race.status = "ongoing"
+          end
+        end
+      end
+
+    end
+    @ongoing_races = Race.where(status: "ongoing", track_id: @track.id)
     @race = @track.races.find_by(user: current_user)
   end
 
