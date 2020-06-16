@@ -79,6 +79,7 @@ class TracksController < ApplicationController
           else
             @race.status = "ongoing"
           end
+          @race.save
         end
       end
 
