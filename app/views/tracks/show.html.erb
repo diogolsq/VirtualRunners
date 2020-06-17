@@ -102,17 +102,19 @@
 
     <% if @race.status == "finished" %>
 
-      <div class="track-details d-flex">
-        <div class="map-container col-6">
-          <div class="map-with-button">
-            <div class="track-map col-12">
-              <div id="map"
-                style="width: 100%; height: 100%;"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-            </div>
+   <div class="container-fluid">
+    <div class="track-details row">
+
+      <div class="map-container col-12 col-sm-12 col-md-6">
+        <div class="map-with-button">
+          <div class="track-map col-12">
+            <div id="map"
+              style="width: 100%; height: 100%;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
           </div>
         </div>
+      </div>
 
         <div class="track-descrption col-6">
           <h1><%= @track.name %></h1>
@@ -127,6 +129,7 @@
           <p><%=@track.description%></p>
         </div>
       </div>
+    </div>
 
 
       <div class="background-container">
@@ -211,17 +214,19 @@
 
     <% else %>
 
-      <div class="track-details d-flex">
-        <div class="map-container col-6">
-          <div class="map-with-button">
-            <div class="track-map col-12">
-              <div id="map"
-                style="width: 100%; height: 100%;"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-            </div>
+    <div class="container-fluid">
+    <div class="track-details row">
+
+      <div class="map-container col-12 col-sm-12 col-md-6">
+        <div class="map-with-button">
+          <div class="track-map col-12">
+            <div id="map"
+              style="width: 100%; height: 100%;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
           </div>
         </div>
+      </div>
 
         <div class="track-descrption col-6">
           <h1><%= @track.name %></h1>
@@ -253,6 +258,7 @@
           <% end %>
         </div>
       </div>
+    <div>
 
       <% if @track.date == Date.today %>
 
