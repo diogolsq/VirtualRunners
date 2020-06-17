@@ -362,10 +362,17 @@
     .nav-link {
       font-size: 18px;
   }
-  .podium {
-  width: 80%;
-  margin: auto;
+    .podium {
+      width: 80%;
+      margin: auto;
 }
+   .title-podium {
+    font-size: 22px;
+    color: $turquoise;
+    font-weight: bold;
+    margin-top: 25px;
+    text-align: center;
+   }
 }
 
 

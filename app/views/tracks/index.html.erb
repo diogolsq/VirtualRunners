@@ -16,7 +16,7 @@
 <div class="cards">
   <% if @tracks %>
     <% @tracks.each do |track| %>
-      <%= link_to track_path(track), data: { turbolinks: "false" } do %>
+      <%= link_to track_path(track), data: { turbolinks: false } do %>
 
         <% if track.photo.attached? %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('<%= cl_image_path track.photo.key %>')">
