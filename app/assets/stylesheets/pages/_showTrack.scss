@@ -117,37 +117,6 @@
     color: $washed-blue;
   }
 
-@media (min-width: 720px) {
-  .grids-profiles {
-      display: flex;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: 16px;
-      grid-row-gap: 65px;
-      text-align: center;
-  }
-  .grids-track {
-    display: flex;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-  @media (max-width: 540px) {
-    .grids-profiles {
-      display: flex;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 16px;
-      text-align: center;
-  }
-  .grids-track {
-    display: flex;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-}
-
 .btn-run {
   text-decoration: none;
   margin-right: 30px;
