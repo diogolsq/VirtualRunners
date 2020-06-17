@@ -2,18 +2,14 @@
   margin-top: 30px;
 }
 
-
-
-
 .ranking-item {
   align-items: center;
 }
 
 .track-race-details {
+  font-size: 16px;
   margin-top:80px;
 }
-
-
 
 .track-details {
   border: solid;
@@ -33,20 +29,27 @@
 
 .track-descrption h1 {
   color: $turquoise;
+  font-weight: bold;
 }
 
 .track-descrption h3 {
   font-size: 16px;
 }
 
+
 .track-descrption p {
-  font-size: 12px;
 }
 
 #sweet-alert-join {
   background-color: $turquoise;
   border: none;
+  margin-left: 238px;
 }
+
+#sweet-alert-join:hover {
+  background-color: $washed-black;
+}
+
 
 .background-container {
   background-color: $turquoise;
@@ -89,7 +92,7 @@
 
 }
   .tab-pane h2 {
-    color: black;
+    color: $washed-blue;
     margin-top: 20px;
 
   }
@@ -145,4 +148,33 @@
   }
 }
 
+.btn-run {
+  text-decoration: none;
+  margin-right: 30px;
+  background-color: $washed-blue;
+  border: none;
+  font-size: 22px;
+  height: 50px;
+  width: 185px;
+}
+
+.btn-run:hover {
+  text-decoration: none;
+  background-color: $washed-black;
+}
+
+.btn-finish {
+  text-decoration: none;
+  margin-right: 30px;
+  background-color: $washed-blue;
+  border: none;
+  font-size: 22px;
+  height: 50px;
+  width: 198px;
+}
+
+.btn-finish:hover {
+  text-decoration: none;
+  background-color: $washed-black;
+}
 
