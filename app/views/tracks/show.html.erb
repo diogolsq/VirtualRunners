@@ -41,7 +41,15 @@
             <p class='btn btn-danger' id='sweet-alert-join'> Join this Race</p>
           <% end %>
         </div>
-      </div>
+        <h3 class='track-race-details'>Race Details</h3>
+        <p><%= "#{@track.distance} Km - #{@track.distance * 0.621} Miles" %><p>
+        <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
+        <p>Description: <%=@track.description%></p>
+                <%# join race button %>
+        <%= link_to track_races_path(@track), method: :POST, remote: true do %>
+          <p class='btn btn-danger' id='sweet-alert-join'> Join this Race</p>
+        <% end %>
+    
     </div>
 
       <div class="background-container">
