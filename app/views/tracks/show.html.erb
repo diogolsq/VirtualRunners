@@ -35,13 +35,13 @@
         <div class="flipdown-centralize">
             <div id="flipdown" class="flipdown"></div>
         </div>
-        <h3 class='track-race-details subtitle'>Race Details:</h3>
+        <h3 class='track-race-details'></h3>
         <p><%= "#{@track.distance} Km - #{@track.distance * 0.621} Miles" %><p>
         <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
         <p class="subtitle">Description: </p>
         <p><%=@track.description%></p>
         <%# join race button %>
-        <%= link_to track_races_path(@track), method: :POST, remote: true do %>
+        <%= link_to track_races_path(@track), method: :POST, remote: true, class: "btn-join" do %>
           <p class='btn btn-danger' id='sweet-alert-join'> Join this Race</p>
         <% end %>
       </div>
@@ -116,7 +116,7 @@
         </div>
       </div>
 
-        <div class="track-descrption col-6">
+        <div class="track-descrption col-12 col-sm-12 col-md-6">
           <h1><%= @track.name %></h1>
           <div id='trackdata' data-date=<%= @date.to_s %>></div>
           <div class="flipdown-centralize">
@@ -228,7 +228,7 @@
         </div>
       </div>
 
-        <div class="track-descrption col-6">
+        <div class="track-descrption col-12 col-sm-12 col-md-6">
           <h1><%= @track.name %></h1>
           <div id='trackdata' data-date=<%= @date.to_s %>></div>
           <div class="flipdown-centralize">
