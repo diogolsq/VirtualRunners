@@ -2,10 +2,14 @@
   // display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 10%;
-  padding: 0px 20px;
+  padding: 0px 0px;
   color: white;
+  position:fixed;
+  bottom:0;
+  padding-bottom:0;
 }
+
+
 .menu-links {
   display: flex;
   align-items: center;
