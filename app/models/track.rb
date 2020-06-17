@@ -1,7 +1,8 @@
 class Track < ApplicationRecord
   include PgSearch::Model
 
-  validates :name, :description, :level, :start_address, :end_address, :time_to_complete, presence: true
+  validates :description, :level, :start_address, :end_address, :time_to_complete, presence: true
+  validates :name, presence: true, length: { maximum: 22 }
 
   has_many :races, dependent: :destroy
   has_many :users, through: :races

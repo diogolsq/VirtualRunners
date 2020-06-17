@@ -3,8 +3,8 @@
   background-position: center;
   height: 180px;
   display: flex;
+  flex-direction:column;
   justify-content: center;
-  align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -12,16 +12,22 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 20px;
+  padding:8px;
   text-decoration:none !important;
 }
 
 .card-text {
   text-shadow: 1px 1px 3px rgba(0,0,0,1);
   text-align: center;
-  align-self: flex-end;
+  display:flex;
+  justify-content:start;
   padding-bottom: 20px;
   font-family:$home-title;
+  font-size:20px;
+
+
 }
+
 
 .cards {
   display: grid;
@@ -40,6 +46,26 @@
 
 .card-info-box {
   text-shadow:2px 2px 3px rgba(0,0,0,1);
+}
+.card-distance-right  {
+  width:100%;
+  display:flex;
+  justify-content:flex-end;
+}
+
+
+.card-distance {
+  background-color:$turquoise;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  width:70px;
+  height: 70px;
+  font-size:15px;
+  position:relative;
+  bottom:10%;
+
 }
 
 // Smallest device
