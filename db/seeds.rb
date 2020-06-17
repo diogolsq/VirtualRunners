@@ -14,7 +14,8 @@ User.destroy_all
 puts "Users destroyed"
 Track.destroy_all
 puts "Tracks destroyed"
-
+Race.destroy_all
+puts "Races Destroyed"
 
 
 puts "Creating runners/users"
