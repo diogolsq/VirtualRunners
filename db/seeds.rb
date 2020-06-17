@@ -57,10 +57,10 @@ diogo.photo.attach(io:file, filename:"diogo.jpg")
 puts "Creating Tracks"
 
 
-volta_na_lagoa = Track.create!({ name: "Volta na Lagoa Rodrigo de Freitas", description: "Vamos dar 1 volta na lagoa", distance: 2.73, level: 2, date: Date.parse('20-06-2020'), time_to_start: Time.parse("June 20 18:00"), time_to_complete: Time.parse("June 20 20:00"), start_address:'Avenida Epitácio Pessoa 1, Rio de <Janeiro></Janeiro>', end_address:'Avenida Borges de Medeiros 1, Rio de Janeiro'})
+volta_na_lagoa = Track.create!({ name: "Corrida na Lagoa RJ", description: "Vamos dar 1 volta na lagoa", distance: 2.73, level: 2, date: Date.parse('20-06-2020'), time_to_start: Time.parse("June 20 18:00"), time_to_complete: Time.parse("June 20 20:00"), start_address:'Avenida Epitácio Pessoa 1, Rio de <Janeiro></Janeiro>', end_address:'Avenida Borges de Medeiros 1, Rio de Janeiro'})
  file = open("https://media-cdn.tripadvisor.com/media/photo-s/0a/be/77/97/a-lagoa-que-fica-bem.jpg")
   volta_na_lagoa.photo.attach(io: file, filename: "lagoa.jpg")
-maraca = Track.create!({ name: "Corrida em volta do maraca ", description: "2 voltas no maraca", distance: 1.71, level: 1, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Avenida Maracanã, Rio de Janeiro', end_address:'Estátua do Bellini, Rio de Janeiro'})
+maraca = Track.create!({ name: "Corrida do maracanã ", description: "2 voltas no maraca", distance: 1.71, level: 1, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Avenida Maracanã, Rio de Janeiro', end_address:'Estátua do Bellini, Rio de Janeiro'})
  file = open("https://upload.wikimedia.org/wikipedia/commons/b/b4/Aerial_view_of_the_Maracan%C3%A3_Stadium.jpg")
   maraca.photo.attach(io: file, filename: "maraca.jpg")
 lemeaoleblon = Track.create!({ name: " Rio Beach Run", description: "Run in Rio's beach ", distance: 7.90, level: 2, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Pedra do Leme, Rio de Janeiro', end_address:'Mirante Leblon, Rio de Janeiro'})
