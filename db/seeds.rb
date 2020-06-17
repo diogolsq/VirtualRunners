@@ -8,6 +8,15 @@
 require 'open-uri'
 require 'date'
 require 'time'
+require 'faker'
+require 'json'
+
+
+
+OpenURI::Buffer.send :remove_const, 'StringMax' if OpenURI::Buffer.const_defined?('StringMax')
+OpenURI::Buffer.const_set 'StringMax', 0
+
+
 
 puts "Cleaning database"
 User.destroy_all
@@ -63,13 +72,16 @@ volta_na_lagoa = Track.create!({ name: "Corrida na Lagoa RJ", description: "Vamo
 maraca = Track.create!({ name: "Corrida do maracanã ", description: "2 voltas no maraca", distance: 1.71, level: 1, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Avenida Maracanã, Rio de Janeiro', end_address:'Estátua do Bellini, Rio de Janeiro'})
  file = open("https://upload.wikimedia.org/wikipedia/commons/b/b4/Aerial_view_of_the_Maracan%C3%A3_Stadium.jpg")
   maraca.photo.attach(io: file, filename: "maraca.jpg")
-lemeaoleblon = Track.create!({ name: " Rio Beach Run", description: "Run in Rio's beach ", distance: 7.90, level: 2, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Pedra do Leme, Rio de Janeiro', end_address:'Mirante Leblon, Rio de Janeiro'})
+lemeaoleblon = Track.create!({ name: "Rio Beach Run", description: "Run in Rio's beach ", distance: 7.90, level: 2, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 19:00"), time_to_complete: Time.parse("June 19 21:00"), start_address:'Pedra do Leme, Rio de Janeiro', end_address:'Mirante Leblon, Rio de Janeiro'})
  file = open("https://greatruns.com/wp-content/uploads/2016/11/Rio-Cover-e1478717116196.jpg")
   lemeaoleblon.photo.attach(io: file, filename: "lemeleblon.jpg")
 ny_marathon = Track.create!({ name: " New York Marathon", description: "One of the most famous marathons in the world circuit, now in virtual edition ", distance: 42.00, level: 5, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 8:00"), time_to_complete: Time.parse("June 19 23:00"), start_address:'Verrazano-Narrows Bridge, Staten Island', end_address:'67th Street, West Drive, New York'})
  file = open("https://www.ef.com.br/sitecore/__/~/media/universal/pg/8x5/destination/US_US-NY_NYC_1.jpg")
  ny_marathon.photo.attach(io:file, filename: "ny_marathon.jpg")
 
+paris_versailles = Track.create!({ name: "Paris - Versalles", description: " cette course est magnifique ", distance: 16.20, level: 3, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 10:00"), time_to_complete: Time.parse("June 19 23:00"), start_address:'Tour Eiffel, 5 avenue Anatole France, Paris, 75007, France', end_address:'Versailles, Yvelines, France'})
+  file = open("https://www.segueviagem.com.br/wp-content/uploads/2019/09/Torre_Paris_shutterstock.jpg")
+  paris_versailles.photo.attach(io:file, filename:"paris_versailles.jpg")
 puts "Creating Race"
 
 race1 = Race.create!({user_id: gisela.id, track_id: volta_na_lagoa.id, km_ran: 0})
@@ -87,6 +99,47 @@ race12 = Race.create!({user_id: isa.id, track_id: ny_marathon.id, km_ran: 0, sta
 race13 = Race.create!({user_id: runner1.id, track_id: ny_marathon.id, km_ran: 0, status: "ongoing"})
 race14 = Race.create!({user_id: runner2.id, track_id: ny_marathon.id, km_ran: 0, status: "ongoing"})
 race15 = Race.create!({user_id: matheus.id, track_id: ny_marathon.id, km_ran: 0, status: "ongoing"})
+
+
+
+
+puts "creating more 50 new users and randomly signing them in the tracks"
+
+50.times do
+  name_username = Faker::Name.unique.name
+
+  user = User.create!({
+    name: name_username,
+    username: name_username,
+    password:'123456',
+    email: Faker::Internet.email,
+    level:rand(1..5),
+    races_number: rand(1..15)
+  })
+
+  url = "https://randomuser.me/api/"
+  random_user_information = open(url).read
+  random_user = JSON.parse(random_user_information)
+
+
+  file= open(random_user['results'][0]['picture']['medium'])
+  user.photo.attach(io:file, filename: "randomavatar.jpg")
+
+
+  tracktosubscribe =  Track.all.sample(3) # you can settup how many races each random user will be signed in
+
+  tracktosubscribe.each do |track|
+    race = Race.create!({user_id:user.id, track_id: track.id,km_ran:0, status: 'ongoing'})
+
+  end
+
+end
+
+
+
+
+
+
 
 puts "finished!"
 
