@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
 
     <title><%= meta_title %></title>
       <meta name="description" content="<%= meta_description %>">

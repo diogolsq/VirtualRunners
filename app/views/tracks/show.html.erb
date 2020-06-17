@@ -5,100 +5,15 @@
 
 
 
-
-
-
-
 <div class="container-track-show col-12">
 
   <%# case 1 before joining race  %>
 
   <% if !@race.present? %>
-    <div class="grids-track track-details d-flex">
-      <div class="grid-track map-container col-6">
-        <div class="map-with-button">
-          <div class="track-map col-12">
-            <div id="map"
-              style="width: 100%; height: 100%;"
-              data-markers="<%= @markers.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-          </div>
-        </div>
-      </div>
+    <div class="container-top">
+      <div class="track-details row">
 
-      <div class="grid-track track-descrption col-6">
-        <h1><%= @track.name %></h1>
-        <div id='trackdata' data-date=<%= @date.to_s %>></div>
-        <div class="flipdown-centralize">
-            <div id="flipdown" class="flipdown"></div>
-        </div>
-        <h3 class='track-race-details'>Race Details</h3>
-        <p><%= "#{@track.distance} Km - #{@track.distance * 0.621} Miles" %><p>
-        <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
-        <p>Description: <%=@track.description%></p>
-                <%# join race button %>
-        <%= link_to track_races_path(@track), method: :POST, remote: true do %>
-          <p class='btn btn-danger' id='sweet-alert-join'> Join this Race</p>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="background-container">
-      <div class='container-race-info'>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Instructions</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Runners</a>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="Instructions-tab">
-
-            <h2> Make sure you read this before your race! </h2>
-            <ol>
-              <li> Join the race you want to participate in.</li>
-              <li> A scheduled event will created for you. The countdown will start running.</li>
-              <li> If you are unable to assist the challenge please cancel before the race's date.</li>
-              <li> If you dont have the strava app on your running device please install it. Here is a link:</li>
-              <li> On the day of the Race. Comeback to your event and start whenever you are ready with the start running button.</li>
-              <li> Go to strava and and press record.</li>
-              <li> On your marks, set go!! Start running (Your time will be counted from this point on!).</li>
-              <li> Make sure you complete the distance for the specific challenge before finishing your run.</li>
-              <li> Stop your run in strava (race time will end from this point on!)</li>
-              <li> Feel free to name your acticity as you wish to.</li>
-              <li> Come back to this page and hit the finished race button.
-              <li> Check out your results and ranking!</li>
-            </ol>
-          </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="Runners-tab">
-
-                <div class="grids-profiles">
-                  <% @users.each do |user| %>
-                    <%= link_to user_path(user) do %>
-                      <% if user.photo.attached? %>
-                            <div class="grid-profile"><%= cl_image_tag user.photo.key, class:'avatar'%></div>
-                      <% else %>
-                            <div class="grid-profile"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
-                      <% end %>
-                    <% end %>
-                  <%end %>
-                </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <%# case 2 already joined race %>
-  <% else %>
-
-    <% if @race.status == "finished" %>
-
-      <div class="track-details d-flex">
-        <div class="map-container col-6">
+        <div class="map-container col-12 col-sm-12 col-md-6">
           <div class="map-with-button">
             <div class="track-map col-12">
               <div id="map"
@@ -109,20 +24,172 @@
           </div>
         </div>
 
-        <div class="track-descrption col-6">
+
+        <div class="track-descrption col-12 col-sm-12 col-md-6">
           <h1><%= @track.name %></h1>
           <div id='trackdata' data-date=<%= @date.to_s %>></div>
           <div class="flipdown-centralize">
               <div id="flipdown" class="flipdown"></div>
           </div>
-          <h3 class='track-race-details'>Race Details</h3>
+          <h3 class='track-race-details'></h3>
           <p><%= "#{@track.distance} Km - #{@track.distance * 0.621} Miles" %><p>
           <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
-          <p>Description</p>
+          <p class="subtitle">Description: </p>
           <p><%=@track.description%></p>
+          <%# join race button %>
+          <%= link_to track_races_path(@track), method: :POST, remote: true, class: "btn-join" do %>
+            <p class='btn btn-danger' id='sweet-alert-join'> Join this Race</p>
+          <% end %>
+        </div>
+        <h3 class='track-race-details'>Race Details</h3>
+        <p><%= "#{@track.distance} Km - #{@track.distance * 0.621} Miles" %><p>
+        <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
+        <p>Description: <%=@track.description%></p>
+                <%# join race button %>
+        <%= link_to track_races_path(@track), method: :POST, remote: true do %>
+          <p class='btn btn-danger' id='sweet-alert-join'> Join this Race</p>
+        <% end %>
+    
+    </div>
+
+      <div class="background-container">
+        <div class='container-race-info'>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Instructions</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Runners</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="Instructions-tab">
+
+              <h2> Make sure you read this before your race! </h2>
+              <ol>
+                <li> Join the race you want to participate in.</li>
+                <li> A scheduled event will created for you. The countdown will start running.</li>
+                <li> If you are unable to assist the challenge please cancel before the race's date.</li>
+                <li> If you dont have the strava app on your running device please install it. Here is a link:</li>
+                <li> On the day of the Race. Comeback to your event and start whenever you are ready with the start running button.</li>
+                <li> Go to strava and and press record.</li>
+                <li> On your marks, set go!! Start running (Your time will be counted from this point on!).</li>
+                <li> Make sure you complete the distance for the specific challenge before finishing your run.</li>
+                <li> Stop your run in strava (race time will end from this point on!)</li>
+                <li> Feel free to name your acticity as you wish to.</li>
+                <li> Come back to this page and hit the finished race button.
+                <li> Check out your results and ranking!</li>
+              </ol>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="Runners-tab">
+
+                  <div class="grids-profiles">
+                    <% @users.each do |user| %>
+                      <%= link_to user_path(user) do %>
+                        <% if user.photo.attached? %>
+                              <div class="grid-profile"><%= cl_image_tag user.photo.key, class:'avatar'%></div>
+                        <% else %>
+                              <div class="grid-profile"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
+                        <% end %>
+                      <% end %>
+                    <%end %>
+                  </div>
+
+            </div>
+          </div>
         </div>
       </div>
 
+
+    <%# case 2 already joined race %>
+  <% else %>
+
+    <% if @race.status == "finished" %>
+
+     <div class="container-top">
+      <div class="track-details row">
+
+        <div class="map-container col-12 col-sm-12 col-md-6">
+          <div class="map-with-button">
+            <div class="track-map col-12">
+              <div id="map"
+                style="width: 100%; height: 100%;"
+                data-markers="<%= @markers.to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+          <div class="track-descrption col-12 col-sm-12 col-md-6">
+            <h1><%= @track.name %></h1>
+            <div id='trackdata' data-date=<%= @date.to_s %>></div>
+            <div class="flipdown-centralize">
+                <div id="flipdown" class="flipdown"></div>
+            </div>
+            <h3 class='track-race-details'>Race Details</h3>
+            <p><%= "#{@track.distance} Km - #{@track.distance * 0.621} Miles" %><p>
+            <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
+            <p>Description</p>
+            <p><%=@track.description%></p>
+          </div>
+        </div>
+      </div>
+
+<%# Podium dislay%>
+
+      <div class="podium-section col-12">
+        <h3 class="title-podium">- HALL OF FAME -</h3>
+        <div class="podium">
+          <div class="podium-second">
+            <div class="avatar-podium-second">
+              <% if @leaderboard[1].present?%>
+                <% if @leaderboard[1].user.photo.attached? %>
+                  <td><%= cl_image_tag @leaderboard[1].user.photo.key, class:'avatar'%></td>
+                <% else %>
+                  <td><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></td>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="podium-second-stairs"><h3>2nd</h3></div>
+          </div>
+          <div class="podium-first">
+            <div class="avatar-podium-first">
+            <% if @leaderboard.first.present?%>
+              <% if @leaderboard.first.user.photo.attached? %>
+                <td><%= cl_image_tag @leaderboard.first.user.photo.key, class:'avatar'%></td>
+              <% else %>
+                <td><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></td>
+              <% end %>
+            <% end %>
+            </div>
+            <div class="podium-first-stairs"><h3>1st</h3></div>
+          </div>
+          <div class="podium-third">
+            <div class="avatar-podium-third">
+              <% if @leaderboard[2].present?%>
+                  <% if @leaderboard[2].user.photo.attached? %>
+                    <td><%= cl_image_tag @leaderboard[2].user.photo.key, class:'avatar'%></td>
+                  <% else %>
+                    <td><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></td>
+                  <% end %>
+                <% end %>
+            </div>
+            <div class="podium-third-stairs"><h3>3rd</h3></div>
+          </div>
+        </div>
+        <% if @counter == 1 %>
+          <h3 class="podium-p"><%= "You finished #{@counter}st" %></h3>
+        <% elsif @counter == 2 %>
+          <h3 class="podium-p"><%= "You finished #{@counter}nd" %></h3>
+        <% elsif @counter == 3 %>
+          <h3 class="podium-p"><%= "You finished #{@counter}rd" %></h3>
+        <% else %>
+          <h3 class="podium-p"><%= "You finished #{@counter}th" %></h3>
+        <% end %>
+      </div>
 
       <div class="background-container">
         <div class='container-race-info'>
@@ -206,19 +273,21 @@
 
     <% else %>
 
-      <div class="track-details d-flex">
-        <div class="map-container col-6">
-          <div class="map-with-button">
-            <div class="track-map col-12">
-              <div id="map"
-                style="width: 100%; height: 100%;"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-            </div>
+    <div class="container-top">
+    <div class="track-details row">
+
+      <div class="map-container col-12 col-sm-12 col-md-6">
+        <div class="map-with-button">
+          <div class="track-map col-12">
+            <div id="map"
+              style="width: 100%; height: 100%;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
           </div>
         </div>
+      </div>
 
-        <div class="track-descrption col-6">
+        <div class="track-descrption col-12 col-sm-12 col-md-6">
           <h1><%= @track.name %></h1>
           <div id='trackdata' data-date=<%= @date.to_s %>></div>
           <div class="flipdown-centralize">
@@ -233,9 +302,9 @@
           <% if @track.date == Date.today %>
             <div class="d-flex">
               <% if @race.status == "ongoing"%>
-                <%= link_to "Finished Running", track_path(@track),class: "btn btn-primary"  %>
+                <%= link_to "Finished Running", track_path(@track),class: "btn-finish btn-primary"  %>
               <% else %>
-                <%= link_to "Start Running", start_running_race_path(@race), method: "post", class: "btn btn-primary" %>
+                <%= link_to "Start Running", start_running_race_path(@race), method: "post", class: "btn-run btn-primary" %>
               <% end %>
               <%= link_to track_race_path(@track, @race), method: :DELETE, remote: true do %>
                 <p class='btn btn-danger'> Leave Race </p>
@@ -248,6 +317,7 @@
           <% end %>
         </div>
       </div>
+    <div>
 
       <% if @track.date == Date.today %>
 
@@ -385,7 +455,6 @@
 
 
 
-<%= bar_chart @track.races.where(status: 'finished').order('elapsed_time ASC').map(&:elapsed_time) %>
 
 </div>
 
