@@ -79,7 +79,7 @@ ny_marathon = Track.create!({ name: " New York Marathon", description: "One of t
  file = open("https://www.ef.com.br/sitecore/__/~/media/universal/pg/8x5/destination/US_US-NY_NYC_1.jpg")
  ny_marathon.photo.attach(io:file, filename: "ny_marathon.jpg")
 
-paris_versailles = Track.create!({ name: " Paris - Versalles course", description: " cette course est magnifique ", distance: 16.20, level: 3, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 10:00"), time_to_complete: Time.parse("June 19 23:00"), start_address:'Tour Eiffel, 5 avenue Anatole France, Paris, 75007, France', end_address:'Versailles, Yvelines, France'})
+paris_versailles = Track.create!({ name: "Paris - Versalles", description: " cette course est magnifique ", distance: 16.20, level: 3, date: Date.parse('19-06-2020'), time_to_start: Time.parse("June 19 10:00"), time_to_complete: Time.parse("June 19 23:00"), start_address:'Tour Eiffel, 5 avenue Anatole France, Paris, 75007, France', end_address:'Versailles, Yvelines, France'})
   file = open("https://cdn.ticketagora.com.br/ticketagora/images/KO8W3JRY0GPXULLQN8ETIFWSTN53MLSHVXOB1ZZF6ZCIRA8JJ6.png")
   paris_versailles.photo.attach(io:file, filename:"paris_versailles.jpg")
 puts "Creating Race"
@@ -126,7 +126,7 @@ puts "creating more 50 new users and randomly signing them in the tracks"
   user.photo.attach(io:file, filename: "randomavatar.jpg")
 
 
-  tracktosubscribe =  Track.all.sample(3) # you can settup how many races each users will be signed in
+  tracktosubscribe =  Track.all.sample(3) # you can settup how many races each random user will be signed in
 
   tracktosubscribe.each do |track|
     race = Race.create!({user_id:user.id, track_id: track.id,km_ran:0, status: 'ongoing'})
