@@ -3,21 +3,11 @@ class TracksController < ApplicationController
 
   def index
     @tracks = Track.all
+
+    @tracks = Track.global_search(params[:query]) if params[:query].present?
     @tracks = @tracks.sort_by(&:date)
 
-    if params[:search]
-      if params[:search][:query]
-        @tracksresult = Track.find_by(name: params[:search][:query])
-        if @tracksresult
-          redirect_to tracks_path(@tracksresult)
-        else
-          # redirect_to action:'index', alert: "tracks not found"
-          # flash.alert
-          flash[:error] = 'tracks not found'
-          redirect_to action:'index', danger: "tracks not found"
-        end
-      end
-    end
+
   end
 
   def show
