@@ -14,8 +14,8 @@
   <%# case 1 before joining race  %>
 
   <% if !@race.present? %>
-    <div class="track-details d-flex">
-      <div class="map-container col-6">
+    <div class="grids-track track-details d-flex">
+      <div class="grid-track map-container col-6">
         <div class="map-with-button">
           <div class="track-map col-12">
             <div id="map"
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="track-descrption col-6">
+      <div class="grid-track track-descrption col-6">
         <h1><%= @track.name %></h1>
         <div id='trackdata' data-date=<%= @date.to_s %>></div>
         <div class="flipdown-centralize">
@@ -41,8 +41,6 @@
         <%= link_to track_races_path(@track), method: :POST, remote: true do %>
           <p class='btn btn-danger' id='sweet-alert-join'> Join this Race</p>
         <% end %>
-
-
       </div>
     </div>
 

@@ -2,6 +2,7 @@
   margin-top: 30px;
 }
 
+
 .ranking-item {
   align-items: center;
 }
@@ -52,6 +53,7 @@
   background-color: white;
   padding: 20px 80px;
   border-radius: 20px;
+  padding-bottom: 60px;
 }
 
 .nav-tabs {
@@ -113,6 +115,11 @@
       grid-row-gap: 65px;
       text-align: center;
   }
+  .grids-track {
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
   @media (max-width: 540px) {
@@ -123,5 +130,11 @@
       grid-gap: 16px;
       text-align: center;
   }
+  .grids-track {
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
+
 
