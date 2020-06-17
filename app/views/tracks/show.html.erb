@@ -14,7 +14,7 @@
   <%# case 1 before joining race  %>
 
   <% if !@race.present? %>
-  <div class="container-fluid">
+  <div class="container-top">
     <div class="track-details row">
 
       <div class="map-container col-12 col-sm-12 col-md-6">
@@ -48,7 +48,7 @@
     </div>
   </div>
 
-    <div class="background-container container-fluid">
+    <div class="background-container">
       <div class='container-race-info'>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
@@ -102,7 +102,7 @@
 
     <% if @race.status == "finished" %>
 
-   <div class="container-fluid">
+   <div class="container-top">
     <div class="track-details row">
 
       <div class="map-container col-12 col-sm-12 col-md-6">
@@ -214,7 +214,7 @@
 
     <% else %>
 
-    <div class="container-fluid">
+    <div class="container-top">
     <div class="track-details row">
 
       <div class="map-container col-12 col-sm-12 col-md-6">
