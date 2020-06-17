@@ -165,6 +165,23 @@
 }
 
 @media (min-width: 720px) {
+  .container-top {
+  margin-left: 20px;
+  margin-right: 20px;
+  align-self: center;
+}
+.track-details {
+  border: solid;
+  border-color: #f6f6f6;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  padding: 30px 0px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.container-track-show {
+  margin-top: 30px;
+}
   .grids-profiles {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -175,26 +192,49 @@
 }
 
     @media (max-width: 540px) {
-    .grids-profiles {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 16px;
-      text-align: center;
-  }
     .container-top {
       margin-left: 0px;
       margin-right: 0px;
 }
     .track-details {
        border: none;
-      background-color: transparent;
+      background-color: white;
       border-radius: 0px;
       padding: 0px 0px;
       margin-left: 0px;
       margin-right: 0px;
+}
     .container-track-show {
         margin-top: 0px;
+        padding: 0px 0px;
 }
+    .grids-profiles {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 16px;
+      text-align: center;
 }
+    .background-container {
+      height: auto;
+      margin-top: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      border: none;
 }
+    .container-race-info {
+      background-color: white;
+      padding: 0px 0px;
+      border: none;
+      padding-bottom:0px;
+}
+    .track-map {
+      padding: 0px 0px;
+
+    }
+    .map-container {
+    padding: 0px 0px;
+  }
+
+}
+
 
