@@ -109,7 +109,7 @@ GEM
     geocoder (1.6.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    gravatar_image_tag (1.2.0)
+    gravtastic (3.2.6)
     hashie (4.1.0)
     http-accept (1.7.0)
     http-cookie (1.0.3)
@@ -304,7 +304,7 @@ DEPENDENCIES
   faker
   font-awesome-sass
   geocoder
-  gravatar_image_tag
+  gravtastic
   jbuilder (~> 2.7)
   listen (~> 3.2)
   omniauth-strava
