@@ -26,12 +26,11 @@
                <%= track.distance %> km
              </div>
            </div>
-
-              <div class="card-info">
-               <div class="card-info-box">
-                 <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
-               </div>
-              </div>
+            <div class="card-info">
+             <div class="card-info-box">
+               <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
+             </div>
+            </div>
             <div class="card-text">
               <%= track.name.upcase %>
             </div>
@@ -39,22 +38,21 @@
 
         <% else %>
 
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{run})">
+          <div class="card-category card-img-default" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path("faviconlogo.png") %>)">
             <div class="card-distance-right">
               <div class="card-distance">
                 <%= track.distance %> km
               </div>
             </div>
 
+            <div class="card-info">
+              <div class="card-info-box">
+                <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
+            </div>
+
             <div class="card-text">
               <%= track.name.upcase %>
-              <div class="card-info">
-                <div class="card-info-box">
-                  <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
-                </div>
               </div>
-
-
             </div>
           </div>
         <% end %>
