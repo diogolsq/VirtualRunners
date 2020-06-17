@@ -137,6 +137,7 @@
 <%# Podium dislay%>
 
       <div class="podium-section col-12">
+        <h3>HALL OF FAME</h3>
         <div class="podium">
           <div class="podium-second">
             <div class="avatar-podium-second">
@@ -175,6 +176,15 @@
             <div class="podium-third-stairs"><h3>3rd</h3></div>
           </div>
         </div>
+        <% if @counter == 1 %>
+          <h3><%= "You finished #{@counter}st" %></h3>
+        <% elsif @counter == 2 %>
+          <h3><%= "You finished #{@counter}nd" %></h3>
+        <% elsif @counter == 3 %>
+          <h3><%= "You finished #{@counter}rd" %></h3>
+        <% else %>
+          <h3><%= "You finished #{@counter}th" %></h3>
+        <% end %>
       </div>
 
       <div class="background-container">

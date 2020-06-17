@@ -35,6 +35,15 @@ class TracksController < ApplicationController
     @racewithuser = Race.where(user_id:@user.id, track_id:@track.id)
     @race = @racewithuser.first
     @leaderboard = @track.races.where(status: "finished").order("elapsed_time ASC")
+    @counter = 0
+    @leaderboard.each do |race|
+      @counter += 1
+      if race == @race
+        break
+      end
+    end
+
+
 
 
     @markers = [{
