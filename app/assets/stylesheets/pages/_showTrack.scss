@@ -11,7 +11,7 @@
   border-color: #f6f6f6;
   background-color: #f6f6f6;
   border-radius: 20px;
-  padding: 15px;
+  padding: 30px 0px;
   margin-left: 30px;
   margin-right: 30px;
 }
@@ -37,12 +37,15 @@
   background-color: $turquoise;
   height: auto;
   margin-top: 35px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 20px;
 }
 
 .container-race-info {
   background-color: white;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 20px 80px;
+  border-radius: 20px;
 }
 
 .nav-tabs {
@@ -54,6 +57,7 @@
   border-right: 1px solid #DEE2E6;
   border-bottom: 1px solid #DEE2E6;
   height: auto;
+  padding: 40px 30px;
 }
 
 .runner-avatar {
@@ -61,6 +65,16 @@
   justify-content: space-around;
   text-align: center;
   align-self: center;
+
+  .tab-pane h2 {
+    color: black;
+    margin-top: 20px;
+
+  }
+
+  .tab-pane ol {
+    color: black;
+  }
 
 @media (max-width: 540px) {
 .runners-avatar {
