@@ -79,3 +79,6 @@ gem 'geocoder'
 
 # it will help us to implement the search in our DB, it is plug and play
 gem 'pg_search', '~> 2.3.0'
+
+#create random data
+gem 'faker'
