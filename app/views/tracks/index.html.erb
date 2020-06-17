@@ -26,12 +26,11 @@
                <%= track.distance %> km
              </div>
            </div>
-
-              <div class="card-info">
-               <div class="card-info-box">
-                 <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
-               </div>
-              </div>
+            <div class="card-info">
+             <div class="card-info-box">
+               <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
+             </div>
+            </div>
             <div class="card-text">
               <%= track.name.upcase %>
             </div>
@@ -46,15 +45,14 @@
               </div>
             </div>
 
+            <div class="card-info">
+              <div class="card-info-box">
+                <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
+            </div>
+
             <div class="card-text">
               <%= track.name.upcase %>
-              <div class="card-info">
-                <div class="card-info-box">
-                  <i class="fas fa-calendar-day"></i> <%= track.date.strftime("%d-%m-%Y") %>
-                </div>
               </div>
-
-
             </div>
           </div>
         <% end %>
