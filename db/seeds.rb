@@ -14,7 +14,8 @@ User.destroy_all
 puts "Users destroyed"
 Track.destroy_all
 puts "Tracks destroyed"
-
+Race.destroy_all
+puts "Races Destroyed"
 
 
 puts "Creating runners/users"
@@ -80,12 +81,12 @@ race6 = Race.create!({user_id: matheus.id, track_id: maraca.id, km_ran: 0})
 race7 = Race.create!({user_id: isa.id, track_id: lemeaoleblon.id, km_ran: 0})
 race8 = Race.create!({user_id: milene.id, track_id: lemeaoleblon.id, km_ran: 0})
 race9 = Race.create!({user_id: diogo.id, track_id: lemeaoleblon.id, km_ran: 0})
-race10 = Race.create!({user_id: gisela.id, track_id: ny_marathon.id, km_ran: 0})
-race11 = Race.create!({user_id: diogo.id, track_id: ny_marathon.id, km_ran: 0})
-race12 = Race.create!({user_id: isa.id, track_id: ny_marathon.id, km_ran: 0})
-race13 = Race.create!({user_id: runner1.id, track_id: ny_marathon.id, km_ran: 0})
-race14 = Race.create!({user_id: runner2.id, track_id: ny_marathon.id, km_ran: 0})
-race15 = Race.create!({user_id: matheus.id, track_id: ny_marathon.id, km_ran: 0})
+race10 = Race.create!({user_id: gisela.id, track_id: ny_marathon.id, km_ran: 0, status: "ongoing"})
+race11 = Race.create!({user_id: diogo.id, track_id: ny_marathon.id, km_ran: 0, status: "ongoing"})
+race12 = Race.create!({user_id: isa.id, track_id: ny_marathon.id, km_ran: 0, status: "ongoing"})
+race13 = Race.create!({user_id: runner1.id, track_id: ny_marathon.id, km_ran: 0, status: "ongoing"})
+race14 = Race.create!({user_id: runner2.id, track_id: ny_marathon.id, km_ran: 0, status: "ongoing"})
+race15 = Race.create!({user_id: matheus.id, track_id: ny_marathon.id, km_ran: 0, status: "ongoing"})
 
 puts "finished!"
 
