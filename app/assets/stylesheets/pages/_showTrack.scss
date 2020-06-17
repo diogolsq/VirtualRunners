@@ -17,8 +17,8 @@
 }
 
 .track-details .btn {
-  background-color: $turquoise;
-  border-color: $turquoise;
+  background-color: $washed-blue;
+  border-color: $washed-blue;
   font-size: 24px;
 }
 
@@ -73,6 +73,11 @@
   align-self: center;
 }
 
+.grid-profile .avatar {
+  width: 65px;
+  height: 65px;
+
+}
   .tab-pane h2 {
     color: black;
     margin-top: 20px;
@@ -90,11 +95,13 @@
   }
 
   #home-tab {
+    color: $washed-blue;
+  }
+  #home-tab .active {
     color: $turquoise;
   }
-
   #profile-tab {
-    color: $turquoise;
+    color: $washed-blue;
   }
 
 @media (min-width: 720px) {
@@ -104,6 +111,7 @@
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-gap: 16px;
       grid-row-gap: 65px;
+      text-align: center;
   }
 }
 
@@ -113,6 +121,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 16px;
+      text-align: center;
   }
 }
 

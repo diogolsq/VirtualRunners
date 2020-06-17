@@ -309,18 +309,20 @@
                   </div>
                 </div>
 
-                  <div class="signed-up-runners"
+                  <div class="signed-up-runners">
                     <div class="runners-avatar">
                       <p> All competitors</p>
-                      <% @users.each do |user| %>
-                        <%= link_to user_path(user) do %>
-                          <% if user.photo.attached? %>
-                                <div class="runner-avatar"><%= cl_image_tag user.photo.key, class:'avatar'%></div>
-                          <% else %>
-                                <div class="runner-avatar"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
+                      <div class="grids-profiles">
+                        <% @users.each do |user| %>
+                          <%= link_to user_path(user) do %>
+                            <% if user.photo.attached? %>
+                                  <div class="grid-profile"><%= cl_image_tag user.photo.key, class:'avatar'%></div>
+                            <% else %>
+                                  <div class="grid-profile"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
+                            <% end %>
                           <% end %>
-                        <% end %>
-                      <%end %>
+                        <%end %>
+                    </div>
                     </div>
                   </div>
 
