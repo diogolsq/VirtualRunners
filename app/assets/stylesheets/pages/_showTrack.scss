@@ -60,11 +60,12 @@
   padding: 40px 30px;
 }
 
-.runner-avatar {
+.grid-profile {
   align-items: center;
   justify-content: space-around;
   text-align: center;
   align-self: center;
+}
 
   .tab-pane h2 {
     color: black;
@@ -76,20 +77,36 @@
     color: black;
   }
 
-@media (max-width: 540px) {
-.runners-avatar {
-    display: flex;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 16px;
+  .nav-link {
+    color: $turquoise;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  #home-tab {
+    color: $turquoise;
+  }
+
+  #profile-tab {
+    color: $turquoise;
+  }
+
+@media (min-width: 720px) {
+  .grids-profiles {
+      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 16px;
+      grid-row-gap: 65px;
   }
 }
 
   @media (max-width: 540px) {
-    display: flex;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 16px;
+    .grids-profiles {
+      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 16px;
   }
 }
 

@@ -41,6 +41,8 @@
         <%= link_to track_races_path(@track), method: :POST, remote: true do %>
           <p class='btn btn-danger' id='sweet-alert-join'> Join this Race</p>
         <% end %>
+
+
       </div>
     </div>
 
@@ -75,13 +77,13 @@
           </div>
           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="Runners-tab">
 
-                <div class="runners-avatar">
+                <div class="grids-profiles">
                   <% @users.each do |user| %>
                     <%= link_to user_path(user) do %>
                       <% if user.photo.attached? %>
-                            <div class="runner-avatar"><%= cl_image_tag user.photo.key, class:'avatar'%></div>
+                            <div class="grid-profile"><%= cl_image_tag user.photo.key, class:'avatar'%></div>
                       <% else %>
-                            <div class="runner-avatar"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
+                            <div class="grid-profile"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
                       <% end %>
                     <% end %>
                   <%end %>
@@ -294,15 +296,17 @@
               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="Runners-tab">
                 <div class="active-runners">
                   <p>Active Runners</p>
-                  <% @ongoing_races.each do |race| %>
-                  <%= link_to user_path(race.user) do %>
-                      <% if race.user.photo.attached? %>
-                            <div class="runner-avatar"><%= cl_image_tag race.user.photo.key, class:'avatar'%></div>
-                      <% else %>
-                            <div class="runner-avatar"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
+                  <div class="grids-profiles">
+                    <% @ongoing_races.each do |race| %>
+                    <%= link_to user_path(race.user) do %>
+                        <% if race.user.photo.attached? %>
+                              <div class="grids-profile"><%= cl_image_tag race.user.photo.key, class:'avatar'%></div>
+                        <% else %>
+                              <div class="grids-profile"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
+                        <% end %>
                       <% end %>
                     <% end %>
-                  <% end %>
+                  </div>
                 </div>
 
                   <div class="signed-up-runners"
@@ -358,13 +362,13 @@
               </div>
               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="Runners-tab">
 
-                    <div class="runners-avatar">
+                    <div class="grids-profiles">
                       <% @users.each do |user| %>
                         <%= link_to user_path(user) do %>
                           <% if user.photo.attached? %>
-                                <div class="runner-avatar"><%= cl_image_tag user.photo.key, class:'avatar'%></div>
+                                <div class="grids-profile"><%= cl_image_tag user.photo.key, class:'avatar'%></div>
                           <% else %>
-                                <div class="runner-avatar"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
+                                <div class="grids-profile"><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></div>
                           <% end %>
                         <% end %>
                       <%end %>
