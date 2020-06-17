@@ -195,6 +195,93 @@
   }
 }
 
+// Podium styling
+
+.podium-section {
+  background-color: white;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.podium {
+  width: 350px;
+  height: 300px;
+  background-color: white;
+  margin: auto;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.podium-second {
+  height: 100%;
+  width: 33%;
+}
+.avatar-podium-second{
+
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  padding-top: 77px;
+}
+.podium-second-stairs{
+  background-color: $turquoise;
+  height: 50%;
+  width: 100%;
+  border-left: solid;
+  border-top: solid;
+  border-bottom: solid;
+  border-color: white;
+  text-align: center;
+  color: white;
+  padding-top: 55px;
+}
+
+
+.podium-first {
+  height: 100%;
+  width: 33%;
+}
+.avatar-podium-first {
+  height: 35%;
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+}
+.podium-first-stairs{
+  background-color: $turquoise;
+  height: 65%;
+  width: 100%;
+  border: solid;
+  border-color: white;
+  text-align: center;
+  color: white;
+  padding-top: 75px;
+}
+
+.podium-third {
+  height: 100%;
+  width: 33%;
+}
+.avatar-podium-third {
+
+  height: 60%;
+  width: 100%;
+  text-align: center;
+  padding-top: 112px;
+}
+.podium-third-stairs {
+  background-color:  $turquoise;
+  height: 40%;
+  width: 100%;
+  border-right: solid;
+  border-top: solid;
+  border-bottom: solid;
+  border-color: white;
+  text-align: center;
+  color: white;
+  padding-top: 40px;
+}
+
     @media (max-width: 540px) {
     .container-top {
       margin-left: 0px;
@@ -275,6 +362,10 @@
     .nav-link {
       font-size: 18px;
   }
+  .podium {
+  width: 80%;
+  margin: auto;
+}
 }
 
 
