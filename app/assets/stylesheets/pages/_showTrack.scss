@@ -22,7 +22,7 @@
 }
 
 .track-details .btn {
-  background-color: $washed-blue;
+  background-color: $turquoise;
   border-color: $washed-blue;
   font-size: 24px;
 }
@@ -47,7 +47,7 @@
 }
 
 #sweet-alert-join:hover {
-  background-color: $washed-black;
+  background-color: $washed-blue;
 }
 
 .background-container {
@@ -123,6 +123,7 @@
   font-size: 22px;
   height: 50px;
   width: 185px;
+  color: white;
 }
 
 .btn-run:hover {
@@ -168,32 +169,6 @@
   font-weight: bold;
 }
 
-@media (min-width: 720px) {
-  .container-top {
-  margin-left: 20px;
-  margin-right: 20px;
-  align-self: center;
-}
-.track-details {
-  border: solid;
-  border-color: #f6f6f6;
-  background-color: #f6f6f6;
-  border-radius: 20px;
-  padding: 30px 0px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-.container-track-show {
-  margin-top: 30px;
-}
-  .grids-profiles {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: 16px;
-      grid-row-gap: 65px;
-      text-align: center;
-  }
-}
 
 // Podium styling
 
@@ -269,6 +244,7 @@
   text-align: center;
   padding-top: 112px;
 }
+
 .podium-third-stairs {
   background-color:  $turquoise;
   height: 40%;
@@ -280,6 +256,33 @@
   text-align: center;
   color: white;
   padding-top: 40px;
+}
+
+@media (min-width: 720px) {
+  .container-top {
+  margin-left: 20px;
+  margin-right: 20px;
+  align-self: center;
+}
+.track-details {
+  border: solid;
+  border-color: #f6f6f6;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  padding: 30px 0px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.container-track-show {
+  margin-top: 30px;
+}
+  .grids-profiles {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 16px;
+      grid-row-gap: 65px;
+      text-align: center;
+  }
 }
 
     @media (max-width: 540px) {
@@ -329,10 +332,10 @@
       padding: 0px 0px;
   }
     .track-descrption h1 {
-    color: $turquoise;
-    font-weight: bold;
-    font-size: 30px;
-    margin-top: 10px;
+      color: $turquoise;
+      font-weight: bold;
+      font-size: 30px;
+      margin-top: 10px;
 }
     .track-race-details {
       font-size: 18px;
@@ -353,6 +356,24 @@
       text-align: center;
       vertical-align: center;
     }
+
+    .track-details .btn {
+      text-decoration: none;
+      margin-right: 0px;
+      background-color: $turquoise;
+      border: none;
+      margin-left: 0px;
+      width: 308px;
+      font-size: 18px;
+      margin-top: 14px;
+      margin-bottom: 22px;
+      margin-left: 20px;
+
+}
+    .track-details .btn:hover {
+      background-color: $washed-blue;
+      }
+
     .tab-pane h2 {
       color: $washed-blue;
       margin-top: 20px;
@@ -373,6 +394,7 @@
     margin-top: 25px;
     text-align: center;
    }
+
 }
 
 
