@@ -328,6 +328,12 @@
       padding: 0px 0px;
 
     }
+
+    .p-details {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 22px;
+    }
     .map-container {
       padding: 0px 0px;
   }
@@ -355,6 +361,8 @@
     .btn-join {
       text-align: center;
       vertical-align: center;
+      color: white;
+      text-decoration: none;
     }
 
     .track-details .btn {
@@ -370,6 +378,8 @@
       margin-left: 20px;
 
 }
+
+
     .track-details .btn:hover {
       background-color: $washed-blue;
       }
@@ -394,6 +404,7 @@
     margin-top: 25px;
     text-align: center;
    }
+
 
 }
 

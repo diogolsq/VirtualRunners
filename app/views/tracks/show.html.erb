@@ -32,8 +32,8 @@
               <div id="flipdown" class="flipdown"></div>
           </div>
           <h3 class='track-race-details'></h3>
-          <p><%= "#{@track.distance} Km - #{@track.distance * 0.621} Miles" %><p>
-          <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
+          <p class="p-details"><%= "#{@track.distance} Km - #{@track.distance * 0.621} mi" %><p>
+          <p class="p-details"><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
           <p class="subtitle">Description: </p>
           <p><%=@track.description%></p>
           <%# join race button %>
@@ -121,10 +121,10 @@
               <div class="flipdown-centralize">
                   <div id="flipdown" class="flipdown"></div>
               </div>
-              <h3 class='track-race-details'>Race Details</h3>
-              <p><%= "#{@track.distance} Km - #{@track.distance * 0.621} Miles" %><p>
-              <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
-              <p>Description</p>
+              <h3 class='track-race-details'></h3>
+              <p class="p-details"><%= "#{@track.distance} Km - #{@track.distance * 0.621} mi" %><p>
+              <p class="p-details"><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
+              <p class="subtitle">Description:</p>
               <p><%=@track.description%></p>
             </div>
           </div>
@@ -285,26 +285,26 @@
           <div class="flipdown-centralize">
               <div id="flipdown" class="flipdown"></div>
           </div>
-          <h3 class='track-race-details'>Race Details</h3>
-          <p><%= "#{@track.distance} Km - #{@track.distance * 0.621} Miles" %><p>
-          <p><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
-          <p>Description</p>
+          <h3 class='track-race-details'></h3>
+          <p class="p-details"><%= "#{@track.distance} Km - #{@track.distance * 0.621} mi" %><p>
+          <p class="p-details"><%= "Date: #{@track.date} Time: #{@track.time_to_start}" %></p>
+          <p class="subtitle">Description:</p>
           <p><%=@track.description%></p>
           <%# Button if time or not  %>
           <% if @track.date == Date.today %>
 
               <% if @race.status == "ongoing"%>
-                <%= link_to "Finished Running", track_path(@track),class: "btn-finish btn-primary"  %>
+                <%= link_to "Finished Running", track_path(@track),class: "btn btn-primary"  %>
               <% else %>
                 <%= link_to "Start Running", start_running_race_path(@race), method: "post", class: "btn btn-primary" %>
               <% end %>
               <%= link_to track_race_path(@track, @race), method: :DELETE, remote: true do %>
-                <p class='btn btn-danger'> Leave Race </p>
+                <p class='btn btn-primary'> Leave Race </p>
               <% end %>
 
           <% else %>
             <%= link_to track_race_path(@track, @race), method: :DELETE, remote: true do %>
-                <p class='btn btn-danger'> Leave Race </p>
+                <p class='btn btn-primary'> Leave Race </p>
             <% end %>
           <% end %>
         </div>
