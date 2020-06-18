@@ -62,11 +62,13 @@ class TracksController < ApplicationController
         )
 
         activities = client.athlete_activities
-        activity = activities.first
-        pactivity = activities[1]
+        activities.sort_by!(&:start_date).reverse!
+        activity = activities.first # this matchs strava_activity
+        pactivity = activities[1] # this don't match
 
         if pactivity
-          if pactivity.id.to_s == @race.strava_activity_id
+          if pactivity.id.to_s == @race.strava_activity_id # it will never go in this loop
+
             @race.strava_activity_id = activity.id.to_s
             @race.distance = activity.distance
             @race.elapsed_time = activity.elapsed_time
@@ -80,11 +82,28 @@ class TracksController < ApplicationController
               @race.status = "ongoing"
             end
             @race.save
+
+          elsif activity.id.to_s == @race.strava_activity_id # it will never go in this loop
+            object = pactivity
+
+            @race.strava_activity_id = pactivity.id.to_s
+            @race.distance = pactivity.distance
+            @race.elapsed_time = pactivity.elapsed_time
+            @race.start_lat_lng = pactivity.start_latlng
+            @race.end_lat_lng = pactivity.end_latlng
+            @race.average_speed = pactivity.average_speed
+            @race.max_speed = pactivity.max_speed
+            if pactivity.distance >= activity.distance
+              @race.status = "finished"
+            else
+              @race.status = "ongoing"
+            end
+            @race.save
           end
         end
+      end
     end
 
-    end
     @ongoing_races = Race.where(status: "ongoing", track_id: @track.id)
     @race = @track.races.find_by(user: current_user)
   end
