@@ -24,14 +24,7 @@ class TracksController < ApplicationController
     @user = current_user
     @racewithuser = Race.where(user_id:@user.id, track_id:@track.id)
     @race = @racewithuser.first
-    @leaderboard = @track.races.where(status: "finished").order("elapsed_time ASC")
-    @counter = 0
-    @leaderboard.each do |race|
-      @counter += 1
-      if race == @race
-        break
-      end
-    end
+
 
 
 
@@ -87,6 +80,14 @@ class TracksController < ApplicationController
     end
     @ongoing_races = Race.where(status: "ongoing", track_id: @track.id)
     @race = @track.races.find_by(user: current_user)
+    @leaderboard = @track.races.where(status: "finished").order("elapsed_time ASC")
+    @counter = 0
+    @leaderboard.each do |race|
+      @counter += 1
+      if race == @race
+        break
+      end
+    end
   end
 
 
