@@ -13,7 +13,7 @@
             <%= image_tag "avatar-default-copy.png", crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false unless current_user.photo.attached?%>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
-              <%= link_to "Track's", tracks_path, class: "dropdown-item" %>
+              <%= link_to "Tracks", tracks_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
