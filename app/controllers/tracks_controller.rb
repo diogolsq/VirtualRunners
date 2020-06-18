@@ -55,11 +55,18 @@ class TracksController < ApplicationController
         )
 
         activities = client.athlete_activities
-        fake_activity = activities.find { |a| a.name == @race.track.name }
-        activities.sort_by!(&:start_date).reverse!
+        fake_activities = activities.select { |a| a.name == @race.track.name }
+        # activities.sort_by!(&:start_date).reverse!
         # activity = activities.first # this matchs strava_activity
-        activity = activities.first unless fake_activity == activities.first
-        activity ||= activities.second # this don't match
+        # activity = activities.first unless fake_activity == activities.first
+        # activity ||= activities.second # this don't match
+        if fake_activities[0].elapsed_time_in_hours_s.present?
+          fake_activity = fake_activities[1]
+          activity = fake_activities[0]
+        else
+          fake_activity = fake_activities[0]
+          activity = fake_activities[1]
+        end
 
         if activity
           if fake_activity.id.to_s == @race.strava_activity_id # it will never go in this loop
