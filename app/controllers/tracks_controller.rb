@@ -55,12 +55,14 @@ class TracksController < ApplicationController
         )
 
         activities = client.athlete_activities
+        fake_activity = activities.find { |a| a.name == @race.track.name }
         activities.sort_by!(&:start_date).reverse!
-        activity = activities.first # this matchs strava_activity
-        pactivity = activities[1] # this don't match
+        # activity = activities.first # this matchs strava_activity
+        activity = activities.first unless fake_activity == activities.first
+        activity ||= activities.second # this don't match
 
-        if pactivity
-          if pactivity.id.to_s == @race.strava_activity_id # it will never go in this loop
+        if activity
+          if fake_activity.id.to_s == @race.strava_activity_id # it will never go in this loop
 
             @race.strava_activity_id = activity.id.to_s
             @race.distance = activity.distance
@@ -69,29 +71,30 @@ class TracksController < ApplicationController
             @race.end_lat_lng = activity.end_latlng
             @race.average_speed = activity.average_speed
             @race.max_speed = activity.max_speed
-            if activity.distance >= pactivity.distance
+            if activity.distance >= fake_activity.distance
               @race.status = "finished"
             else
               @race.status = "ongoing"
             end
             @race.save
 
-          elsif activity.id.to_s == @race.strava_activity_id # it will never go in this loop
-            object = pactivity
+          # elsif activity.id.to_s == @race.strava_activity_id # it will never go in this loop
+          #   object = pactivity
 
-            @race.strava_activity_id = pactivity.id.to_s
-            @race.distance = pactivity.distance
-            @race.elapsed_time = pactivity.elapsed_time
-            @race.start_lat_lng = pactivity.start_latlng
-            @race.end_lat_lng = pactivity.end_latlng
-            @race.average_speed = pactivity.average_speed
-            @race.max_speed = pactivity.max_speed
-            if pactivity.distance >= activity.distance
-              @race.status = "finished"
-            else
-              @race.status = "ongoing"
-            end
-            @race.save
+          #   @race.strava_activity_id = pactivity.id.to_s
+          #   @race.distance = pactivity.distance
+          #   @race.elapsed_time = pactivity.elapsed_time
+          #   @race.start_lat_lng = pactivity.start_latlng
+          #   @race.end_lat_lng = pactivity.end_latlng
+          #   @race.average_speed = pactivity.average_speed
+          #   @race.max_speed = pactivity.max_speed
+          #   if pactivity.distance >= activity.distance
+          #     @race.status = "finished"
+          #   else
+          #     @race.status = "ongoing"
+          #   end
+          #   @race.save
+
           end
         end
       end
