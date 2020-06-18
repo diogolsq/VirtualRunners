@@ -2,6 +2,29 @@
   margin-top: 30px;
 }
 
+.turquoise-stats-box {
+  width: 95%;
+  margin: auto;
+  height: auto;
+  border-radius: 10px;
+  text-align: center;
+  background-color: $turquoise;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.avg-speed-icon {
+  height: 28px;
+  width: 40px;
+}
+
+.max_speed-icon {
+  height: 32px;
+  width: 40px;
+}
+
 .ranking-item {
   align-items: center;
 }
@@ -169,6 +192,11 @@
   font-weight: bold;
 }
 
+ .shoe-icon {
+    width: 120px;
+    height: 120px;
+  }
+
 
 // Podium styling
 
@@ -236,6 +264,11 @@
 .podium-third {
   height: 100%;
   width: 33%;
+}
+
+.text-before-grid {
+  color: $washed-blue;
+  text-align: center;
 }
 .avatar-podium-third {
 
@@ -333,6 +366,8 @@
       font-size: 16px;
       text-align: center;
       margin-bottom: 22px;
+      color: $washed-blue;
+      font-weight: bold;
     }
     .map-container {
       padding: 0px 0px;
@@ -375,11 +410,8 @@
       font-size: 18px;
       margin-top: 14px;
       margin-bottom: 22px;
-      margin-left: 20px;
-
-}
-
-
+       margin-left: 20px;
+  }
     .track-details .btn:hover {
       background-color: $washed-blue;
       }
@@ -396,6 +428,7 @@
     .podium {
       width: 80%;
       margin: auto;
+      margin-bottom: 15px;
 }
    .title-podium {
     font-size: 22px;
@@ -404,8 +437,17 @@
     margin-top: 25px;
     text-align: center;
    }
-
+  .shoe-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .podium-p {
+    text-align: center;
+    color: $turquoise;
+  }
 
 }
+
+
 
 
