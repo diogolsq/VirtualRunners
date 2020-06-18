@@ -32,6 +32,9 @@ gem "omniauth-strava"
 # Gemfile
 gem 'pundit'
 
+# gem for graphs chartkick
+gem "chartkick"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -76,3 +79,9 @@ gem 'geocoder'
 
 # it will help us to implement the search in our DB, it is plug and play
 gem 'pg_search', '~> 2.3.0'
+
+# create random data
+gem 'faker'
+
+# fetch random photos
+gem 'gravtastic'

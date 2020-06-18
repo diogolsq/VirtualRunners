@@ -7,12 +7,14 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "mapbox-gl/dist/mapbox-gl";
-@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+// @import "mapbox-gl/dist/mapbox-gl";
+// @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/showTrack";
 
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');

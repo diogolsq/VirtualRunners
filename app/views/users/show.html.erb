@@ -1,10 +1,12 @@
-<div class="profile-page">
+<div data-aos="fade-up"
+     data-aos-duration="3000"
+     class="profile-page">
   <%= image_tag "profile-background.jpg" , width: "100%", class: "hovercard" %>
 
 
   <div class="profile-avatar">
-    <%= cl_image_tag @user.photo.key, crop: :fill, id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false if @user.photo.attached?%>
-    <%= image_tag "avatar-default-copy.png", crop: :fill, id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false unless @user.photo.attached?%>
+    <%= cl_image_tag @user.photo.key, crop: :fill, 'aria-haspopup': true, 'aria-expanded': false if @user.photo.attached?%>
+    <%= image_tag "avatar-default-copy.png", crop: :fill, 'aria-haspopup': true, 'aria-expanded': false unless @user.photo.attached?%>
   </div>
 
   <div class="profile-info">
@@ -18,7 +20,7 @@
               <% if @user.races_number == nil %>
                 0
               <% else %>
-                <%=  @races.number %>
+                <%=  @user.races_number %>
               <% end %>
             </p>
           </div>
@@ -26,25 +28,24 @@
               <p>Level: <%= @user.level %></p>
             </div>
       </div>
+        <div class="btn btn-primary">
+          <%= link_to "Create your own Race", new_track_path %>
+        </div>
   </div>
 
   <div class="profile-botton-part">
 
     <div class="personal-info">
         <div class="card-body">
-          <p>About me: <%= @user.Bio.capitalize %></p>
+          <p>About me: <%= @user.Bio.capitalize if @user.Bio %></p>
           <%= link_to edit_user_registration_path, class: "nav-link" do %>
           <i class="fas fa-user-edit"></i>
           <% end %>
         </div>
-        <div class="btn btn-primary">
-          <%= link_to "Create your own Race", new_track_path %>
-        </div>
-    </div>
     <div class="profile-races-cards">
       <div class="past-races">
-        <div class="card bg-light mb-3">
-          <div class="card-header">
+        <div data-aos='fade-up' class="card bg-light mb-3">
+          <div  class="card-header">
             <h2>Past Races</h2>
           </div>
           <div class="card-body">
@@ -52,15 +53,17 @@
               <% track = Track.find(race.track_id) %>
               <%= link_to track_path(track) do%>
                 <%=  track.name %>
+                <br>
               <% end %>
             <% end %>
           </div>
         </div>
+    </div>
       </div>
 
       <div class="profile-races">
         <div class="profile-schedule-race">
-          <div class="card bg-light mb-3">
+          <div data-aos='fade-up' class="card bg-light mb-3">
             <div class="card-header">
               <h2>Scheduled Races</h2>
             </div>
@@ -70,6 +73,7 @@
                 <% track = Track.find(race.track_id) %>
                 <%= link_to track_path(track) do%>
                   <%=  track.name %>
+                  <br>
                 <% end %>
               <% end %>
             </div>

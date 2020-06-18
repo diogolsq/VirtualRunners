@@ -26,6 +26,7 @@ h1 {
 
 .nav-link-login {
   color: white;
+  text-decoration: none;
 }
 
 .navbar-list{
@@ -35,4 +36,9 @@ h1 {
 .nav-item {
   position:relative;
   top:8px;
+  list-style: none;
+}
+
+.a {
+  text-decoration: none;
 }

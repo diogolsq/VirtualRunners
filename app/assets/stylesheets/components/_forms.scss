@@ -1,15 +1,46 @@
-.centralize-form {
+.centralize-form{
+  display:flex;
+  justify-content:center;
+}
+.form-shape {
   display: flex;
   flex-direction:column;
   align-items:center;
-  justify-content:center;
-   border: 1px solid;
-  box-shadow: 5px 5px #888888;
+  justify-content:space-between;
+  // border: 1px solid;
+  box-shadow: 2px 2px 3px #888888;
   border-radius: 10px;
+  margin-left: 16px;
+  margin-top: 75%;
+  margin-right: 16px;
+  width:55%;
+  height:30%;
+  padding:8px;
+  background-color:#DAE1E6;
+  opacity:0.8;
+
+
 }
+
+.background-form{
+  width:100vw;
+  height:100vh;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.centralize-form-information{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+
 
 .centralize-form h2{
   margin-top: 2%;
+
 }
 
 .form-centralize {
@@ -45,4 +76,16 @@
 .form-button:hover {
   background-color:#1F919F;
   color:black;
+}
+
+
+.login-centralize-form{
+text-align: center;
+padding: 20%;
+
+}
+
+.btn-danger {
+  background-color: #13a0af;
+  border-color:#13a0af;
 }

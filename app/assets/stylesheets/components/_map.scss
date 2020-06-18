@@ -19,3 +19,12 @@
 #map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left > div > div.directions-control.directions-control-inputs > div > div.mapbox-directions-profile.mapbox-directions-component-keyline.mapbox-directions-clearfix {
   display:none;
 }
+
+
+#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left > div > div.directions-control.directions-control-instructions > div > div.mapbox-directions-component.mapbox-directions-route-summary > span{
+  display:none;
+}
+
+#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left > div > div.directions-control.directions-control-instructions > div > div.mapbox-directions-component.mapbox-directions-route-summary{
+  display:none;
+}

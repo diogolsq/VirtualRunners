@@ -7,6 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("chartkick")
+require("chart.js")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -33,7 +35,7 @@ import { FlipDown } from '../plugins/init_flipdown';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener( 'turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
@@ -45,33 +47,31 @@ document.addEventListener('turbolinks:load', () => {
     icon: "success"
   });
 
-
-
-
   // Start Of FlipDown Logic
 
   // Unix timestamp (in seconds) to count down to
   var trackData = document.querySelector('#trackdata');
-  var datestring = trackData.dataset.date;
+  if (trackData) {
+    var datestring = trackData.dataset.date;
 
 
-  var trackDate = (new Date(datestring)/1000);
+    var trackDate = (new Date(datestring)/1000);
 
-  // Set up FlipDown
-  var flipdown = new FlipDown(trackDate)
+    // Set up FlipDown
+    var flipdown = new FlipDown(trackDate)
 
-    // Start the countdown
-    .start()
+      // Start the countdown
+      .start()
 
-    // Do something when the countdown ends
-    .ifEnded(() => {
-      console.log('The countdown has ended!');
-    });
-
+      // Do something when the countdown ends
+      .ifEnded(() => {
+        console.log('The countdown has ended!');
+      });
+  };
 
   // Show version number
-  var ver = document.getElementById('ver');
-  ver.innerHTML = flipdown.version;
+  // var ver = document.getElementById('ver');
+  // ver.innerHTML = flipdown.version;
 
   // End of FlipDown Logic
 

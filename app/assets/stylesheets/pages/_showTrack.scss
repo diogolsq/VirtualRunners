@@ -1,0 +1,462 @@
+.container-track-show {
+  margin-top: 30px;
+}
+
+.turquoise-stats-box {
+  width: 95%;
+  margin: auto;
+  height: auto;
+  border-radius: 10px;
+  text-align: center;
+  background-color: $turquoise;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.avg-speed-icon {
+  height: 28px;
+  width: 40px;
+}
+
+.max_speed-icon {
+  height: 32px;
+  width: 40px;
+}
+
+.ranking-item {
+  align-items: center;
+}
+
+.track-race-details {
+  font-size: 16px;
+  margin-top:80px;
+}
+
+.track-details {
+  border: solid;
+  border-color: #f6f6f6;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  padding: 30px 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.track-details .btn {
+  background-color: $turquoise;
+  border-color: $washed-blue;
+  font-size: 12px;
+}
+
+.track-descrption h1 {
+  color: $turquoise;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.track-descrption h3 {
+  font-size: 16px;
+}
+
+
+.track-descrption p {
+}
+
+#sweet-alert-join {
+  background-color: $turquoise;
+  border: none;
+  margin-left: 238px;
+}
+
+#sweet-alert-join:hover {
+  background-color: $washed-blue;
+}
+
+.background-container {
+  height: auto;
+  margin-top: 35px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+}
+
+.container-race-info {
+  background-color: white;
+  padding: 20px 80px;
+  border-radius: 20px;
+  padding-bottom: 60px;
+}
+
+.nav-tabs {
+  padding-bottom: 7px;
+}
+
+.tab-pane {
+  border-left: 1px solid #DEE2E6;
+  border-right: 1px solid #DEE2E6;
+  border-bottom: 1px solid #DEE2E6;
+  height: auto;
+  padding: 40px 30px;
+}
+
+.grid-profile {
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  align-self: center;
+}
+
+.grids-profile .avatar {
+  width: 65px;
+  height: 65px;
+
+}
+  .tab-pane h2 {
+    color: $washed-blue;
+    margin-top: 20px;
+
+  }
+
+  .tab-pane ol {
+    color: black;
+  }
+
+  .nav-link {
+    color: $turquoise;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  #home-tab {
+    color: $washed-blue;
+  }
+  #home-tab .active {
+    color: $turquoise;
+  }
+  #profile-tab {
+    color: $washed-blue;
+  }
+
+.btn-run {
+  text-decoration: none;
+  margin-right: 30px;
+  background-color: $washed-blue;
+  border: none;
+  font-size: 22px;
+  height: 50px;
+  width: 185px;
+  color: white;
+}
+
+.btn-run:hover {
+  text-decoration: none;
+  background-color: $washed-black;
+}
+
+.btn-finish {
+  text-decoration: none;
+  margin-right: 30px;
+  background-color: $washed-blue;
+  border: none;
+  font-size: 22px;
+  height: 50px;
+  width: 198px;
+}
+
+.btn-finish:hover {
+  text-decoration: none;
+  background-color: $washed-black;
+}
+
+.grid-profile {
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  align-self: center;
+}
+
+.grids-profile .avatar {
+  width: 65px;
+  height: 65px;
+
+}
+
+.container-top {
+  margin-left: 20px;
+  margin-right: 20px;
+  align-self: center;
+}
+
+.subtitle {
+  font-weight: bold;
+}
+
+ .shoe-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+
+// Podium styling
+
+.podium-section {
+  background-color: white;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.podium {
+  width: 350px;
+  height: 300px;
+  background-color: white;
+  margin: auto;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.podium-second {
+  height: 100%;
+  width: 33%;
+}
+.avatar-podium-second{
+
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  padding-top: 77px;
+}
+.podium-second-stairs{
+  background-color: $turquoise;
+  height: 50%;
+  width: 100%;
+  border-left: solid;
+  border-top: solid;
+  border-bottom: solid;
+  border-color: white;
+  text-align: center;
+  color: white;
+  padding-top: 55px;
+}
+
+
+.podium-first {
+  height: 100%;
+  width: 33%;
+}
+.avatar-podium-first {
+  height: 35%;
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+}
+.podium-first-stairs{
+  background-color: $turquoise;
+  height: 65%;
+  width: 100%;
+  border: solid;
+  border-color: white;
+  text-align: center;
+  color: white;
+  padding-top: 75px;
+}
+
+.podium-third {
+  height: 100%;
+  width: 33%;
+}
+
+.text-before-grid {
+  color: $washed-blue;
+  text-align: center;
+}
+.avatar-podium-third {
+
+  height: 60%;
+  width: 100%;
+  text-align: center;
+  padding-top: 112px;
+}
+
+.podium-third-stairs {
+  background-color:  $turquoise;
+  height: 40%;
+  width: 100%;
+  border-right: solid;
+  border-top: solid;
+  border-bottom: solid;
+  border-color: white;
+  text-align: center;
+  color: white;
+  padding-top: 40px;
+}
+
+@media (min-width: 720px) {
+  .container-top {
+  margin-left: 20px;
+  margin-right: 20px;
+  align-self: center;
+}
+.track-details {
+  border: solid;
+  border-color: #f6f6f6;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  padding: 30px 0px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.container-track-show {
+  margin-top: 30px;
+}
+  .grids-profiles {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 16px;
+      grid-row-gap: 65px;
+      text-align: center;
+  }
+}
+
+    @media (max-width: 540px) {
+    .container-top {
+      margin-left: 0px;
+      margin-right: 0px;
+}
+    .track-details {
+       border: none;
+      background-color: white;
+      border-radius: 0px;
+      padding: 0px 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+}
+    .container-track-show {
+        margin-top: 0px;
+        padding: 0px 0px;
+        background-color: white;
+}
+    .grids-profiles {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 16px;
+      text-align: center;
+}
+    .background-container {
+      height: auto;
+      margin-top: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      border-radius: 0px;
+      background-color: white;
+}
+    .container-race-info {
+      background-color: white;
+      padding: 0px 0px;
+      border-radius: 0px;
+      padding-bottom:0px;
+      margin-top: 20px;
+}
+    .track-map {
+      padding: 0px 0px;
+
+    }
+
+    .p-details {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 22px;
+      color: $washed-blue;
+      font-weight: bold;
+    }
+    .map-container {
+      padding: 0px 0px;
+  }
+    .track-descrption h1 {
+      color: $turquoise;
+      font-weight: bold;
+      font-size: 30px;
+      margin-top: 10px;
+}
+    .track-race-details {
+      font-size: 18px;
+      margin-top: 35px;
+      margin-bottom: 35px;
+}
+    #sweet-alert-join {
+      background-color: $turquoise;
+      border: none;
+      margin-left: 0px;
+      width: 308px;
+      font-size: 18px;
+      margin-top: 14px;
+      margin-bottom: 22px;
+      margin-left: 20px;
+}
+    .btn-join {
+      text-align: center;
+      vertical-align: center;
+      color: white;
+      text-decoration: none;
+    }
+
+    .track-details .btn {
+      text-decoration: none;
+      margin-right: 0px;
+      background-color: $turquoise;
+      border: none;
+      margin-left: 0px;
+      width: 308px;
+      font-size: 18px;
+      margin-top: 14px;
+      margin-bottom: 22px;
+       margin-left: 20px;
+  }
+    .track-details .btn:hover {
+      background-color: $washed-blue;
+      }
+
+    .tab-pane h2 {
+      color: $washed-blue;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+  }
+    .nav-link {
+      font-size: 18px;
+  }
+    .podium {
+      width: 80%;
+      margin: auto;
+      margin-bottom: 15px;
+}
+   .title-podium {
+    font-size: 22px;
+    color: $turquoise;
+    font-weight: bold;
+    margin-top: 25px;
+    text-align: center;
+   }
+  .shoe-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .podium-p {
+    text-align: center;
+    color: $turquoise;
+  }
+
+  .track-descrption{
+    background-color: white;
+    z-index: 2;
+    padding-top: 30px;
+    border-radius: 41px;
+    margin-top: -44px;
+  }
+
+}
+
+
+
+
