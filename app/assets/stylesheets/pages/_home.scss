@@ -111,6 +111,7 @@
 
 .p-turquoise-box {
   padding-left: 60px;
+  color: white;
 }
 
 .p-black-box {
@@ -150,6 +151,7 @@ height: 491px;
 
 .h2-box {
   font-size: 3rem;
+  color: white;
 }
 
 @media (min-width: 720px) {
@@ -220,6 +222,10 @@ height: 491px;
 
   .h2-box {
   font-size: 2rem;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
