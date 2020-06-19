@@ -202,6 +202,8 @@
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
+                <% @leaderboard_counter = 1 %>
+
                 <% @leaderboard.each do |runner| %>
 
                       <table class="table table-borderless">
@@ -214,7 +216,6 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <% @leaderboard_counter = 1 %>
                           <%= link_to user_path(runner.user) do %>
                             <th scope="row"><%= @leaderboard_counter %></th>
                             <% if runner.user.photo.attached? %>
