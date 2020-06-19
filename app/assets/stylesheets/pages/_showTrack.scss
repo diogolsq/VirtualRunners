@@ -269,7 +269,10 @@
 
 .text-before-grid {
   color: $washed-blue;
+  font-weight: bold;
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .avatar-podium-third {
 
@@ -447,12 +450,17 @@
     color: $turquoise;
   }
 
-  .track-descrption{
+  .track-descrption {
     background-color: white;
     z-index: 2;
     padding-top: 30px;
     border-radius: 41px;
     margin-top: -44px;
+  }
+  .time-to-beat {
+    text-align: center;
+    font-weight: bold;
+    color: $washed-blue;
   }
 
 }

@@ -214,13 +214,15 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <th scope="row">1</th>
+                          <% @leaderboard_counter = 1 %>
                           <%= link_to user_path(runner.user) do %>
+                            <th scope="row"><%= @leaderboard_counter %></th>
                             <% if runner.user.photo.attached? %>
                               <td><%= cl_image_tag runner.user.photo.key, class:'avatar'%></td>
                             <% else %>
                               <td><%= image_tag "avatar-default-copy.png", crop: :fill, class:'avatar' %></td>
                             <% end %>
+                            <% @leaderboard_counter += 1 %>
                           <% end %>
                           <td><%= runner.user.name %></td>
                           <td><%= runner.elapsed_time %></td>
@@ -359,11 +361,11 @@
 
       <% if @track.date == Date.today %>
 
-        <% if @leaderboard.first.present? %>
+        <% if @leaderboad.present? %>
           <div class="card">
             <div class="card-body">
-              <p> Time to Beat <p>
-              <%= @leaderboard.first.elapsed_time %>
+              <p class="time-to-beat"> Time to Beat <p>
+               <p class="time_to_beat"><%= @leaderboard.first.elapsed_time %><p>
             </div>
           </div>
         <% end %>
