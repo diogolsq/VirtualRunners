@@ -223,7 +223,7 @@
                             <% end %>
                           <% end %>
                           <td><%= runner.user.name %></td>
-                          <td><%= runner.elapsed_time %></td>
+                          <td><%= Time.at(runner.elapsed_time).utc.strftime("%H:%M:%S") %></td>
                           </tbody>
                           </table>
 
@@ -238,11 +238,11 @@
                 <div class="d-flex" style="justify-content: space-around;">
                   <div>
                     <p>Yours</p>
-                    <p><%= @race.elapsed_time %>s</p>
+                    <p><%= Time.at(@race.elapsed_time).utc.strftime("%H:%M:%S") %></p>
                   </div>
                   <div>
                     <p>1st Place</p>
-                    <p><%= @leaderboard.first.elapsed_time %>s</p>
+                    <p><%= Time.at(@leaderboard.first.elapsed_time).utc.strftime("%H:%M:%S") %></p>
                   </div>
                 </div>
               </div>
@@ -363,7 +363,7 @@
           <div class="card">
             <div class="card-body">
               <p> Time to Beat <p>
-              <%= @leaderboard.first.elapsed_time %>
+              <%= Time.at(@leaderboard.first.elapsed_time).utc.strftime("%H:%M:%S") %>
             </div>
           </div>
         <% end %>
