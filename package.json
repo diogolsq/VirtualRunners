@@ -10,7 +10,7 @@
     "@rails/webpacker": "4.2.2",
     "aos": "^2.3.4",
     "bootstrap": "^4.5.0",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "chartkick": "^3.2.0",
     "flipdown": "^0.3.2",
     "jquery": "^3.5.1",
